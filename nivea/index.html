@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="니베아, 신뢰감을 주는 미니멀하고 깔끔한 디자인으로 새롭게 리뉴얼. 누구나 쉽게 사용할 수 있는 직관적인 사용자 경험을 제공합니다. 피부를 위한 간결하면서도 효과적인 케어를 만나보세요.">
+    <meta name="keywords" content="니베아, NIVEA, 스킨케어, 미니멀 디자인, 신뢰감, 직관적인 UX, 심플한 UI, 피부 관리, 보습 크림, 로션, 바디케어" />
+    <meta name="author" content="Bak Ahin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIVEA 리뉴얼</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHuman.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <header>
+        <div class="fix">
+            <div class="ham_icon">
+                <ul class="icon">
+                    <li><a href="#"><img src="img/User_tb.png" alt="마이메뉴"></a></li>
+                    <li><a href="#"><img src="img/Handbag_tb.png" alt="장바구니"></a></li>
+                    <li><a href="#"><img src="img/History_tb.png" alt="최근본상품"></a></li>
+                </ul><!-- //.icon -->
+            </div><!-- //.ham_icon -->
+            <button type="button" class="close"><img src="img/X.png" alt="닫기"></button>
+            <div class="ham_nav">
+                <ul class="ham_gnb">
+                    <li><a href="#">제품</a>
+                        <button type="button"></button>
+                        <ul class="ham_sub">
+                            <li><a href="#">베스트</a></li>
+                            <li><a href="#">페이스</a></li>
+                            <li><a href="#">바디</a></li>
+                            <li><a href="#">선</a></li>
+                            <li><a href="#">니베아맨</a></li>
+                        </ul><!-- //.ham_sub -->
+                    </li>
+                    <li><a href="#">뷰티팁</a>
+                        <button type="button"></button>
+                        <ul class="ham_sub">
+                            <li><a href="#">바디</a></li>
+                            <li><a href="#">피부타입</a></li>
+                            <li><a href="#">스킨케어</a></li>
+                            <li><a href="#">선케어</a></li>
+                            <li><a href="#">자주 묻는 질문들</a></li>
+                        </ul><!-- //.ham_sub -->
+                    </li>
+                    <li><a href="#">브랜드 소개</a>
+                        <button type="button"></button>
+                        <ul class="ham_sub">
+                            <li><a href="#">역사</a></li>
+                            <li><a href="#">성분</a></li>
+                            <li><a href="#">지속가능성</a></li>
+                        </ul><!-- //.ham_sub -->
+                    </li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">리뷰</a></li>
+                </ul><!-- //.ham_gnb -->
+            </div><!-- //.ham_nav -->
+            <div class="ham_join">
+                <ul class="join_m">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">멤버십</a></li>
+                </ul><!-- //.join_m -->
+            </div><!-- //.ham_join -->
+        </div><!-- //.fix -->
+        <div class="top inner">
+            <button type="button" class="ham"></button>
+            <h1><a href="#">NIVEA</a></h1>
+            <div class="s_right">
+                <div class="search">
+                    <input type="text" placeholder="#건조한피부 #바디로션 #SOS" value="">
+                    <button type="button" class="sc_btn"></button>
+                </div><!-- //.search -->
+                <div class="right">
+                    <ul class="join_m">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">멤버십</a></li>
+                    </ul><!-- //.join_m -->
+                    <ul class="h_icon">
+                        <li><a href="#"><img src="img/User.png" alt="마이메뉴"></a></li>
+                        <li><a href="#"><img src="img/Handbag.png" alt="장바구니"></a></li>
+                        <li><a href="#"><img src="img/History.png" alt="최근본상품"></a></li>
+                    </ul><!-- //.h_icon -->
+                </div><!-- //.right-->
+            </div>
+        </div><!-- //.top -->
+        <nav>
+            <div class="nav_bg"></div>
+            <ul class="gnb inner">
+                <li><a href="#">제품</a>
+                    <ul class="sub">
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">페이스</a></li>
+                        <li><a href="#">바디</a></li>
+                        <li><a href="#">선</a></li>
+                        <li><a href="#">니베아맨</a></li>
+                    </ul><!-- //.sub -->
+                </li>
+                <li><a href="#">뷰티팁</a>
+                    <ul class="sub">
+                        <li><a href="#">바디</a></li>
+                        <li><a href="#">피부타입</a></li>
+                        <li><a href="#">스킨케어</a></li>
+                        <li><a href="#">선케어</a></li>
+                        <li><a href="#">자주 묻는 질문들</a></li>
+                    </ul><!-- //.sub -->
+                </li>
+                <li><a href="#">브랜드 소개</a>
+                    <ul class="sub">
+                        <li><a href="#">역사</a></li>
+                        <li><a href="#">성분</a></li>
+                        <li><a href="#">지속가능성</a></li>
+                    </ul><!-- //.sub -->
+                </li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">리뷰</a></li>
+            </ul><!-- //.gnb -->
+        </nav>
+    </header>
+    <div class="wrap">
+        <main>
+            <div class="top_btn"><a href="#"></a></div>
+            <div class="banner">
+                <div class="swiper main_banner">
+                    <ul class="swiper-wrapper banner_slide_wrap">
+                        <li class="swiper-slide main1"><a href="#">
+                                <div class="inner">
+                                    <div class="b_txt">
+                                        <p>독일 직수입 니베아 크림 150ml</p>
+                                        <h2>믿고 쓰는 모두의 <b>보습 크림</b><br><b>손상된 피부장벽</b> 구원템</h2>
+                                        <div class="name_tag">
+                                            <p>nivea cream</p>
+                                        </div>
+                                    </div><!-- //.b_txt -->
+                                    <div class="b_img">
+                                        <img src="img/banner_cream.png" alt="nivea cream">
+                                    </div>
+                                </div><!-- //.inner -->
+                            </a></li>
+                        <li class="swiper-slide main2"><a href="#">
+                                <div class="inner">
+                                    <div class="b_txt">
+                                        <p>니베아 SOS 케어 바디로션 400ml</p>
+                                        <h2>72시간<!-- <br class="mb_br">  --> <b>고보습 효과</b>로<br><b>촉촉</b>하고 <b>부드럽게!</b>
+                                        </h2>
+                                        <div class="name_tag">
+                                            <p>SOS <em>care</em></p>
+                                        </div>
+                                    </div><!-- //.b_txt -->
+                                    <div class="b_img">
+                                        <img src="img/banner_sos.png" alt="sos lotion">
+                                    </div>
+                                </div><!-- //.inner -->
+                            </a></li>
+                        <li class="swiper-slide main3"><a href="#">
+                                <div class="inner">
+                                    <div class="b_txt">
+                                        <p>니베아 인텐시브 바디로션 시리즈</p>
+                                        <h2><b>끈적임</b> 없이 피부에 <b>쏙</b> 스며드는<br> <b>데일리 바디 보습</b> 케어</b>
+                                        </h2>
+                                        <div class="name_tag">
+                                            <p>INTENSIVE CARE</p>
+                                        </div>
+                                    </div><!-- //.b_txt -->
+                                    <div class="b_img">
+                                        <img src="img/banner_intensive1.png" alt="intensive lotion">
+                                        <img src="img/banner_intensive2.png" alt="intensive lotion">
+                                    </div>
+                                </div><!-- //.inner -->
+                            </a></li>
+                    </ul><!-- //.banner_slide -->
+                    <ul class="swiper-pagination pager">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </ul><!-- //.pager -->
+                </div><!-- //.main_banner -->
+            </div><!-- //.banner -->
+            <section class="best_seller inner">
+                <h3 data-aos="fade-down" data-aos-duration="500" data-aos-delay="200" data-aos-once="flase"
+                    data-aos-mirror="true">BEST SELLERS</h3>
+                <ul class="bs_list">
+                    <li class="bs1" data-aos="flip-left" data-aos-delay="500" data-aos-duration="400"
+                        data-aos-once="flase" data-aos-mirror="true">
+                        <a href="#">
+                            <div class="bs_top">
+                                <div class="bs_img"><img src="img/best_seller1.png" alt="니베아 인샤워 바디로션 나리싱"></div>
+                                <!-- //.bs_img -->
+                            </div><!-- //.bs_top -->
+                            <div class="bs_bottom">
+                                <strong>니베아 인샤워 바디로션 나리싱<br>
+                                    <p class="mb_p">400ml 1+1</p>
+                                </strong>
+                                <span>바쁜 아침 시간 단축의 비결! 샤워중에 바르는 바디로션</span>
+                                <div class="discount_price">
+                                    <p>29%</p>
+                                    <em>33,800원</em>
+                                    <strong>23,700원</strong>
+                                </div><!-- //.discount_price -->
+                                <div class="scope">
+                                    <img src="img/star.png" alt="별">
+                                    <span>4.8(43)</span>
+                                </div><!-- //.scope -->
+                            </div><!-- //.bs_bottom -->
+                        </a>
+                        <button type="button" class="bs_btn">
+                            담기
+                        </button><!-- //.bs_btn -->
+                    </li><!-- //.bs1 -->
+                    <li class="bs2" data-aos="flip-left" data-aos-delay="600" data-aos-duration="400"
+                        data-aos-once="flase" data-aos-mirror="true">
+                        <a href="#">
+                            <div class="bs_top">
+                                <div class="bs_img"><img src="img/best_seller2.png" alt="히알루론 모이스쳐 플러스 립케어">
+                                </div>
+                            </div><!-- //.bs_top -->
+                            <div class="bs_bottom">
+                                <strong>히알루론 모이스쳐 플러스 립케어<br>
+                                    <p class="mb_p">5.2g X 4</p>
+                                </strong>
+                                <span>수분 시카 듀얼 포뮬러로 강력한 수분 부스팅 케어</span>
+                                <div class="discount_price">
+                                    <p>23%</p>
+                                    <em>23,600원</em>
+                                    <strong>18,100원</strong>
+                                </div><!-- //.discount_price -->
+                                <div class="scope">
+                                    <img src="img/star.png" alt="별">
+                                    <span>4.86(2,640)</span>
+                                </div><!-- //.scope -->
+                            </div><!-- //.bs_bottom -->
+                        </a>
+                        <button type="button" class="bs_btn">
+                            담기
+                        </button><!-- //.bs_btn -->
+                    </li><!-- //.bs2 -->
+                    <li class="bs3" data-aos="flip-left" data-aos-delay="700" data-aos-duration="400"
+                        data-aos-once="flase" data-aos-mirror="true">
+                        <a href="#">
+                            <div class="bs_top">
+                                <div class="bs_img"><img src="img/best_seller3.png" alt="소프트 리프레싱 모이스춰라이징 크림">
+                                </div>
+                            </div><!-- //.bs_top -->
+                            <div class="bs_bottom">
+                                <strong>소프트 리프레싱 모이스춰라이징 크림<br>
+                                    <p class="mb_p">200ml X 2</p>
+                                </strong>
+                                <span>매일 매일 촉촉한 피부, 자연스럽고 건강하게!</span>
+                                <div class="discount_price">
+                                    <p>10%</p>
+                                    <em>15,200원</em>
+                                    <strong>13,600원</strong>
+                                </div><!-- //.discount_price -->
+                                <div class="scope">
+                                    <img src="img/star.png" alt="별">
+                                    <span>4.91(575)</span>
+                                </div><!-- //.scope -->
+                            </div><!-- //.bs_bottom -->
+                        </a>
+                        <button type="button" class="bs_btn">
+                            담기
+                        </button><!-- //.bs_btn -->
+                    </li><!-- //.bs3 -->
+                    <li class="bs4" data-aos="flip-left" data-aos-delay="800" data-aos-duration="00"
+                        data-aos-once="flase" data-aos-mirror="true">
+                        <a href="#">
+                            <div class="bs_top">
+                                <div class="bs_img"><img src="img/best_seller4.png" alt="니베아 SOS 케어 바디로션">
+                                </div>
+                            </div><!-- //.bs_top -->
+                            <div class="bs_bottom">
+                                <strong>니베아 SOS 케어 바디로션 <p class="mb_p">400ml <br>1+1</p></strong>
+                                <span>72시간 고보습, 니베아 바디로션 스테디셀러!</span>
+                                <div class="discount_price">
+                                    <p>50%</p>
+                                    <em>37,800원</em>
+                                    <strong>18,900원</strong>
+                                </div><!-- //.discount_price -->
+                                <div class="scope">
+                                    <img src="img/star.png" alt="별">
+                                    <span>4.88(13,076)</span>
+                                </div><!-- //.scope -->
+                            </div><!-- //.bs_bottom -->
+                        </a>
+                        <button type="button" class="bs_btn">
+                            담기
+                        </button><!-- //.bs_btn -->
+                    </li><!-- //.bs4 -->
+                </ul><!-- //.bs_list -->
+                <a href="#" class="bs_plus">상품 더보기
+                    <img src="img/chevron-right.png" alt="더보기">
+                </a><!-- //.bs_plus -->
+            </section><!-- //.best_seller -->
+            <section class="promotion">
+                <h3 data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" data-aos-once="flase"
+                    data-aos-mirror="true">NIVEA SPOTLIGHT!</h3>
+                <div class="swiper promotion_video" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500"
+                    data-aos-once="flase" data-aos-mirror="true">
+                    <ul class="swiper-wrapper video_slide_wrap">
+                        <li class="swiper-slide video1">
+                            <video src="video/video2.mp4" width="1100" height="600" poster="img/video_poster.png" loop
+                                muted class="pv"></video>
+                        </li>
+                        <li class="swiper-slide video2">
+                            <video src="video/video1.mp4" width="1100" height="600" poster="img/video_poster.png" loop
+                                muted class="pv"></video>
+                        </li>
+                        <li class="swiper-slide video3">
+                            <video src="video/video3.mp4" width="1100" height="600" poster="img/video_poster.png" loop
+                                muted class="pv"></video>
+                        </li>
+                    </ul><!-- //.video_wrap -->
+                </div><!-- //.promotion_video -->
+            </section><!-- //.promotion -->
+            <section class="pick inner">
+                <h3 data-aos="fade-down" data-aos-delay="100" data-aos-duration="300" data-aos-once="flase"
+                    data-aos-mirror="true">NIVEA's Pick</h3>
+                <div class="con">
+                    <div class="pick_img" data-aos="fade-right" data-aos-delay="200" data-aos-duration="400"
+                        data-aos-once="flase" data-aos-mirror="true">
+                        <a href="#">
+                            <img src="img/니베아크림.png" alt="니베아크림">
+                        </a>
+                    </div><!-- //.pick_img -->
+                    <div class="pick_right">
+                        <h4 data-aos="flip-up" data-aos-once="flase" data-aos-mirror="true" data-aos-delay="200">전세계
+                            150억개 이상 판매<br>독일 직수입 올인원 전신 크림</h4>
+                        <div class="p_txt">
+                            <p data-aos="flip-up" data-aos-once="flase" data-aos-mirror="true">니베아 크림 독일 150ml x 3ea</p>
+                            <div class="discount_price" data-aos="flip-up" data-aos-once="flase" data-aos-mirror="true">
+                                <p>21%</p>
+                                <em>19,500원</em>
+                                <strong>15,300원</strong>
+                            </div><!-- //.discount_price -->
+                            <div class="scope" data-aos="flip-up" data-aos-once="flase" data-aos-mirror="true">
+                                <img src="img/star.png" alt="별">
+                                <span>4.8(43)</span>
+                            </div><!-- //.scope -->
+                            <div class="btn_box">
+                                <button type="button" class="bs_btn">
+                                    담기
+                                </button><!-- //.bs_btn -->
+                                <a href="#">
+                                    <p>VIEW MORE</p><img src="img/more.png" alt="">
+                                </a>
+                            </div><!-- //.btn_box -->
+                        </div><!-- //.p_txt -->
+                    </div><!-- //.pick_right -->
+                </div><!-- //.con -->
+            </section><!-- //.pick -->
+            <section class="sub_banner">
+                <a href="#">
+                    <div class="inner">
+                        <div class="sb_left" data-aos="zoom-in-right" data-aos-delay="300" data-aos-duration="400"
+                            data-aos-once="flase" data-aos-mirror="true">
+                            <div class="txt">
+                                <h3>피부도 MBTI처럼!</h3>
+                                <p>피부 타입별 니베아 제품 선택 가이드</p>
+                            </div><!-- //.txt -->
+                            <div class="emj_all">
+                                <img src="img/emj_box.png" alt="이모지">
+                            </div><!-- //.emj_all -->
+                        </div><!-- //.sb_left -->
+                        <div class="sb_right" data-aos="zoom-in-left" data-aos-delay="200" data-aos-duration="400"
+                            data-aos-once="flase" data-aos-mirror="true">
+                            <span>What’s Your Skin Type?</span>
+                            <img src="img/emj_box2.png" alt="이모지">
+                            <!-- <img src="img/emj.png" alt="이모지" class="emj">
+                        <img src="img/message.png" alt="말풍선" class="message">
+                        <img src="img/mirror_emj.png" alt="거울이모지" class="mirror"> -->
+                        </div><!-- //.sb_right -->
+                    </div><!-- //.inner -->
+                </a>
+            </section><!-- //.sub_banner -->
+            <section class="best_review inner">
+                <h3 data-aos="zoom-in-down" data-aos-duration="400" data-aos-once="flase" data-aos-mirror="true"
+                    data-aos-delay="200">BEST REVIEW</h3>
+                <ul class="br_list">
+                    <li class="br1" data-aos="flip-left" data-aos-duration="300" data-aos-once="flase"
+                        data-aos-mirror="true" data-aos-delay="500">
+                        <div class="br_top">
+                            <a href="#">
+                                <img src="img/best_review1.png" alt="니베아 립케어 스트로베리 샤인 리뷰">
+                                <div class="br_tit">
+                                    <b>촉촉해요</b>
+                                    <div class="id_date">
+                                        <span>cp******</span>
+                                        <span>2025.02.01</span>
+                                    </div><!-- //.id_date -->
+                                </div><!-- //.br_tit -->
+                            </a>
+                        </div><!-- //.br_top -->
+                        <div class="br_bottom">
+                            <div class="br_nametag"><a href="#">
+                                    <img src="img/mini_review1.png" alt="니베아 립케어 스트로베리 샤인">
+                                    <div class="br_txt">
+                                        <p>니베아 립케어 스트로베리 샤인</p>
+                                        <div class="bs_scope">
+                                            <p>261</p>
+                                            <img src="img/star_light.png" alt="별">
+                                            <p>4.93</p>
+                                        </div><!-- //.bs_scope -->
+                                    </div><!-- br_txt -->
+                                </a></div><!-- //.br_nametag -->
+                            <!-- <div class="br_nametag_back">
+                                    <a href="#"> 상품페이지로</a>
+                                </div> -->
+                        </div><!-- //.br_bottom -->
+                    </li><!-- //.br1 -->
+                    <li class="br2" data-aos="flip-left" data-aos-duration="300" data-aos-once="flase"
+                        data-aos-mirror="true" data-aos-delay="400">
+                        <div class="br_top">
+                            <a href="#">
+                                <img src="img/best_review2.png" alt="히알루론 모이스쳐 플러스 립케어 리뷰">
+                                <div class="br_tit">
+                                    <b>발림성이 좋아요</b>
+                                    <div class="id_date">
+                                        <span>fd******</span>
+                                        <span>2025.02.05</span>
+                                    </div><!-- //.id_date -->
+                                </div><!-- //.br_tit -->
+                            </a>
+                        </div><!-- //.br_top -->
+                        <div class="br_bottom">
+                            <div class="br_nametag"><a href="#">
+                                    <img src="img/mini_review2.png" alt="히알루론 모이스쳐 플러스 립케어">
+                                    <div class="br_txt">
+                                        <p>히알루론 모이스쳐 플러스 립...</p>
+                                        <div class="bs_scope">
+                                            <p>2,668</p>
+                                            <img src="img/star_light.png" alt="별">
+                                            <p>4.86</p>
+                                        </div><!-- //.bs_scope -->
+                                    </div><!-- br_txt -->
+                                </a></div><!-- //.br_nametag -->
+                        </div><!-- //.br_bottom -->
+                    </li><!-- //.br2 -->
+                    <li class="br3" data-aos="flip-left" data-aos-duration="300" data-aos-once="flase"
+                        data-aos-mirror="true" data-aos-delay="300">
+                        <div class="br_top">
+                            <a href="#">
+                                <img src="img/best_review3.png" alt="니베아 선페이스 리뷰">
+                                <div class="br_tit">
+                                    <b>무난해요</b>
+                                    <div class="id_date">
+                                        <span>de******</span>
+                                        <span>2024.11.01</span>
+                                    </div><!-- //.id_date -->
+                                </div><!-- //.br_tit -->
+                            </a>
+                        </div><!-- //.top -->
+                        <div class="br_bottom">
+                            <div class="br_nametag"><a href="#">
+                                    <img src="img/mini_review3.png" alt="니베아 선페이스">
+                                    <div class="br_txt">
+                                        <p>니베아 선페이스 샤인컨트롤...</p>
+                                        <div class="bs_scope">
+                                            <p>99</p>
+                                            <img src="img/star_light.png" alt="별">
+                                            <p>4.8</p>
+                                        </div><!-- //.bs_scope -->
+                                    </div><!-- br_txt -->
+                                </a></div><!-- //.br_nametag -->
+                        </div><!-- //.br_bottom -->
+                    </li><!-- //.br3 -->
+                    <li class="br4" data-aos="flip-left" data-aos-duration="300" data-aos-once="flase"
+                        data-aos-mirror="true" data-aos-delay="200">
+                        <div class="br_top">
+                            <a href="#">
+                                <img src="img/best_review4.png" alt="니베아 SOS케어 바디로션 리뷰">
+                                <div class="br_tit">
+                                    <b>건조한 피부에 쓰기 좋아요!</b>
+                                    <div class="id_date">
+                                        <span>mk******</span>
+                                        <span>2025.02.09</span>
+                                    </div><!-- //.id_date -->
+                                </div><!-- //.br_tit -->
+                            </a>
+                        </div><!-- //.top -->
+                        <div class="br_bottom">
+                            <div class="br_nametag"><a href="#">
+                                    <img src="img/mini_review4.png" alt="니베아 SOS케어 바디로션">
+                                    <div class="br_txt">
+                                        <p>니베아 SOS케어 바디로션</p>
+                                        <div class="bs_scope">
+                                            <p>13,076</p>
+                                            <img src="img/star_light.png" alt="별">
+                                            <p>4.88</p>
+                                        </div><!-- //.bs_scope -->
+                                    </div><!-- br_txt -->
+                                </a></div><!-- //.br_nametag -->
+                        </div><!-- //.br_bottom -->
+                    </li><!-- //.br4 -->
+                </ul><!-- //.br_list -->
+                <a href="#" class="bs_plus">리뷰 더보기
+                    <img src="img/chevron-right.png" alt="더보기">
+                </a><!-- //.bs_plus -->
+            </section><!-- //.best_review -->
+            <section class="our_business">
+                <div class="inner">
+                    <h3 data-aos="zoom-out" data-aos-duration="300">니베아는 무엇보다<br class="mb_br"> 피부를 우선으로 생각합니다.</h3>
+                    <ul class="ob_list">
+                        <li class="ob1" data-aos="fade-up" data-aos-duration="300" data-aos-once="flase"
+                            data-aos-mirror="true" data-aos-delay="200">
+                            <div class="icon">
+                                <img src="img/company.png" alt="company">
+                            </div><!-- //icon -->
+                            <p>최첨단 스킨 리서치센터를 보유한<br>스킨케어 분야의 선도 기업</p>
+                        </li><!-- //.ob1 -->
+                        <li class="ob2" data-aos="fade-up" data-aos-duration="300" data-aos-once="flase"
+                            data-aos-mirror="true" data-aos-delay="300">
+                            <div class="icon">
+                                <img src="img/development.png" alt="development">
+                            </div><!-- //icon -->
+                            <p>안티에이징에 뛰어난 효과가 있는 <br>시그니처 성분 Q10 최초 개발</p>
+                        </li><!-- //.ob2 -->
+                        <li class="ob3" data-aos="fade-up" data-aos-duration="300" data-aos-once="flase"
+                            data-aos-mirror="true" data-aos-delay="400">
+                            <div class="icon">
+                                <img src="img/ingredient.png" alt="ingredient">
+                            </div><!-- //.icon -->
+                            <p>피부 본연의 기능을 돕는<br>자연 성분, 자연 유래 성분 사용</p>
+                        </li><!-- //.ob3 -->
+                        <li class="ob4" data-aos="fade-up" data-aos-duration="300" data-aos-once="flase"
+                            data-aos-mirror="true" data-aos-delay="500">
+                            <div class="icon">
+                                <img src="img/research.png" alt="research">
+                            </div><!-- //.icon -->
+                            <p>동물 실험을 대체할 수 있는<br>최고의 방법을 찾기 위해 연구</p>
+                        </li><!-- //.ob4 -->
+                    </ul><!-- //.ob_list -->
+                </div><!-- //.inner -->
+            </section><!-- //.our_business -->
+        </main>
+        <footer>
+            <div class="inner">
+                <div class="f_top">
+                    <div class="tel">
+                        <strong>080-023-0808</strong>
+                        <span>평일 9:00 ~ 18:00 <br>(점심시간 12:00 ~ 13:30)<br>주말 및 공휴일 휴무</span>
+                    </div><!-- //.tel -->
+                    <div class="cs">
+                        <strong>고객센터</strong>
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">법적고지</a></li>
+                            <li><a href="#">자주묻는질문</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                            <li><a href="#">NIVEA Global</a></li>
+                        </ul>
+                    </div><!-- //.cs -->
+                    <div class="us">
+                        <strong>ABOUT US</strong>
+                        <ul>
+                            <li><a href="#">니베아의 역사</a></li>
+                            <li><a href="#">니베아의 지속가능성</a></li>
+                            <li><a href="#">바이어스도르프</a></li>
+                            <li><a href="#">EVENT</a></li>
+                        </ul>
+                    </div><!-- //.us -->
+                    <div class="sns">
+                        <strong>CONNECT WITH US</strong>
+                        <ul>
+                            <li><a href="#"><img src="img/Facebook.png" alt="Facebook"></a></li>
+                            <li><a href="#"><img src="img/Instagram.png" alt="Instagram"></a></li>
+                        </ul>
+                    </div>
+                </div><!-- //.f_top -->
+                <div class="f_bottom">
+                    <div class="f_logo">NIVEA</div><!-- //.f_logo -->
+                    <div class="copy">
+                        <p>저작권 © 바이어스도르프 2025</p>
+                    </div><!-- //.copy -->
+                </div><!-- //.f_bottom -->
+            </div><!-- //.inner -->
+        </footer>
+    </div>
+</body>
+
+</html>

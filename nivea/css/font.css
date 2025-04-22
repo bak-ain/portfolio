@@ -1,0 +1,66 @@
+@charset "utf-8";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poetsen+One&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* 
+    한글폰트
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: 'NanumHumanheavy';
+    font-family: 'NanumHumanEB';
+    font-family: 'NanumHumanbold';
+    font-family: 'NanumHuman';
+    font-family: 'NanumHumanlight';
+    font-family: 'NanumHumanEL';
+    font-family: 'NanumSquareLight';
+    font-family: 'NanumSquare';
+    font-family: 'NanumSquareBold';
+    font-family: 'NanumSquareExtraBold';
+    font-family: 'NanumSquareAcb';
+    font-family: 'NanumSquareAceb';
+    font-family: 'NanumSquareAcl';
+    font-family: 'NanumSquareAcr';
+    font-family: 'NanumSquareRoundLight';
+    font-family: 'NanumSquareRound';
+    font-family: 'NanumSquareRoundBold';
+    font-family: 'NanumSquareRoundExtraBold';
+
+    영어폰트
+    font-family: 'Segoe UI';
+    font-family: 'Segoe UI Bold';
+    font-family: 'Segoe UI Black';
+    font-family: 'Segoe UI Italic';
+    font-family: 'Segoe UI Bold Italic';
+    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Serif", serif;
+    font-family: "Poetsen One", sans-serif;
+    font-family: "EB Garamond", serif;
+*/
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../font/SegoeUI.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: url('../font/SegoeUI-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Italic';
+    src: url('../font/SegoeUI-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    src: url('../font/SegoeUI-Bold_Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Black';
+    src: url('../font/SegoeUI-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
