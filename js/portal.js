@@ -124,6 +124,7 @@ $(function () {
   });
 
   $scrollHint.on('click', function () {
+    e.preventDefault();
     const offset = $('#send_signal').offset().top;
     $('.portal_circle, .portal_title').removeClass('on');
     resetPortal();
@@ -137,6 +138,7 @@ $(function () {
   });
 
   $('.card3').on('click', function () {
+    e.preventDefault();
     if (isDragging) return;
     $cards.each(function () {
       const randomClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
@@ -145,6 +147,7 @@ $(function () {
   });
 
   $('.card10').on('click', function () {
+    e.preventDefault();
     if (isDragging) return;
     const portal = $('.portal_circle');
     const width = portal.width();
@@ -176,6 +179,7 @@ $(function () {
   });
 
   $('.card4').on('click', function () {
+    e.preventDefault();
     if (isDragging) return;
     resetPortal();
   });

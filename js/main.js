@@ -1,5 +1,51 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 $(function () {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  
+  function safeOpenInNewTab(url) {
+    document.activeElement?.blur();
+    const scrollY = window.scrollY;
+  
+    $('body').css({ top: -scrollY + 'px', position: 'fixed', width: '100%' });
+  
+    setTimeout(() => {
+      window.open(url, '_blank');
+      $('body').css({ top: '', position: '', width: '' });
+      window.scrollTo(0, scrollY);
+    }, 100);
+  }
+  $('a').on('click', function (e) {
+    const href = $(this).attr('href');
+    const isExternal = $(this).attr('target') === '_blank';
+  
+    if (!href) return;
+  
+    // 1) mailto는 완전 수동 처리 (window.location.href)
+    if (href.startsWith('mailto:')) {
+      e.preventDefault();
+      setTimeout(() => {
+        window.location.href = href;
+      }, 50); // 스크롤 안정화 후
+      return;
+    }
+  
+    // 2) 외부 target 링크도 수동 처리
+    if (isExternal) {
+      e.preventDefault();
+      safeOpenInNewTab(href);
+      return;
+    }
+  });
+  ScrollTrigger.getAll().forEach(trigger => {
+    if (trigger.trigger && $(trigger.trigger).closest('.contacts').length) {
+      console.log('스크롤트리거 연결됨:', trigger);
+    }
+  });
+      
+  
+    
   // let lastScrollTop = window.pageYOffset;
 
   // window.addEventListener('wheel', function (e) {
