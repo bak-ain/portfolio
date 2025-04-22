@@ -1,8 +1,32 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 $(function () {
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  // if ('scrollRestoration' in history) {
+  //   history.scrollRestoration = 'manual';
+  // }
+  $('a').on('click', function (e) {
+    e.preventDefault(); // 기본 동작 막기
+  
+    const href = $(this).attr('href');
+    const isExternal = $(this).attr('target') === '_blank';
+    const isMail = href.startsWith('mailto:');
+  
+    const scrollY = window.scrollY;
+  
+    setTimeout(() => {
+      if (isMail) {
+        window.location.href = href;
+      } else if (isExternal) {
+        window.open(href, '_blank');
+      } else {
+        window.location.href = href;
+      }
+  
+      // 위치 복구
+      window.scrollTo(0, scrollY);
+    }, 50); // 브라우저 처리 직전에 스크롤 복원
+  });
+  
+  
   // let lastScrollTop = window.pageYOffset;
 
   // window.addEventListener('wheel', function (e) {
