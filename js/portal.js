@@ -25,13 +25,13 @@ $(function () {
         duration: 0.8
       });
     }
-  
+
     $cards.each(function (i) {
       const $card = $(this);
       $card.removeClass(colorClasses.join(' ')).addClass(defaultColors[i]);
       $card.css({ top: '', left: '', right: '', transform: 'translate(0, 0)' });
       $card.attr('data-x', 0).attr('data-y', 0);
-  
+
       const pos = positions[i];
       if (pos.left !== undefined) {
         $card.css({ top: pos.top + 'px', left: pos.left + 'px' });
@@ -39,11 +39,11 @@ $(function () {
         $card.css({ top: pos.top + 'px', right: pos.right + 'px' });
       }
     });
-  
+
     gsap.to($qr, { opacity: 0, scale: 1, y: 0 });
     $qr.removeClass('shown');
   }
-  
+
 
   $('.portal_title').on('click', function (e) {
     e.preventDefault();
@@ -145,6 +145,41 @@ $(function () {
       $(this).removeClass(colorClasses.join(' ')).addClass(randomClass);
     });
   });
+  let cardClickStartX = 0;
+  let cardClickStartY = 0;
+  let isCardDragMoving = false;
+  const dragThreshold = 6;
+
+  $('.card2').on('mousedown touchstart', function (e) {
+    const point = e.type === 'touchstart' ? e.originalEvent.touches[0] : e;
+    cardClickStartX = point.clientX;
+    cardClickStartY = point.clientY;
+    isCardDragMoving = false;
+  });
+
+  $('.card2').on('mousemove touchmove', function (e) {
+    const point = e.type === 'touchmove' ? e.originalEvent.touches[0] : e;
+    const dx = Math.abs(point.clientX - cardClickStartX);
+    const dy = Math.abs(point.clientY - cardClickStartY);
+    if (dx > dragThreshold || dy > dragThreshold) {
+      isCardDragMoving = true;
+    }
+  });
+
+  $('.card2').on('click', function (e) {
+    if (isCardDragMoving) return;
+
+    const href = $(this).data('href');
+    const target = $(this).data('target');
+
+    if (!href) return;
+
+    if (target === '_blank') {
+      window.open(href, '_blank');
+    } else {
+      window.location.href = href;
+    }
+  });
 
   $('.card10').on('click', function (e) {
     e.preventDefault();
@@ -228,3 +263,4 @@ $(function () {
     });
   });
 });
+
