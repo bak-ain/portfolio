@@ -123,7 +123,7 @@ $(function () {
     }
   });
 
-  $scrollHint.on('click', function () {
+  $scrollHint.on('click', function (e) {
     e.preventDefault();
     const offset = $('#send_signal').offset().top;
     $('.portal_circle, .portal_title').removeClass('on');
@@ -137,7 +137,7 @@ $(function () {
     $(this).fadeOut();
   });
 
-  $('.card3').on('click', function () {
+  $('.card3').on('click', function (e) {
     e.preventDefault();
     if (isDragging) return;
     $cards.each(function () {
@@ -146,7 +146,7 @@ $(function () {
     });
   });
 
-  $('.card10').on('click', function () {
+  $('.card10').on('click', function (e) {
     e.preventDefault();
     if (isDragging) return;
     const portal = $('.portal_circle');
@@ -178,7 +178,7 @@ $(function () {
     });
   });
 
-  $('.card4').on('click', function () {
+  $('.card4').on('click', function (e) {
     e.preventDefault();
     if (isDragging) return;
     resetPortal();
