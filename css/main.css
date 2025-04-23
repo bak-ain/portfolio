@@ -143,12 +143,51 @@ section {
 
 .gnb ul li {
     flex: 1;
+    position: relative;
 }
 
 .gnb ul li:hover {
     animation: wobble-top 0.8s ease-in-out 1;
 }
-
+.gnb ul li[data-tooltip]::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #253be599;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-family: "Russo One", sans-serif;
+    white-space: nowrap;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+.gnb ul li.g_icon1[data-tooltip]::after{
+    top: -27px;
+}
+.gnb ul li[data-tooltip]:hover::after{
+    opacity: 1;
+}
+.gnb ul li[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #253be599;
+    opacity: 0;
+}
+.gnb ul li.g_icon1[data-tooltip]::before{
+    top: 4px;
+}
+.gnb ul li[data-tooltip]:hover::before {
+    opacity: 1;
+}
 .gnb ul li a {
     display: flex;
     justify-content: center;

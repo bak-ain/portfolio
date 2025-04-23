@@ -259,7 +259,7 @@ $(function () {
       // 잠깐 후 자동 초기화
       setTimeout(() => {
         isNavigatingFromGNB = false;
-      }, 1000);
+      }, 500);
     });
   });
 });
