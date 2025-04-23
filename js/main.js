@@ -5,13 +5,13 @@ $(function () {
   // }
   $('a').on('click', function (e) {
     e.preventDefault(); // 기본 동작 막기
-  
+
     const href = $(this).attr('href');
     const isExternal = $(this).attr('target') === '_blank';
     const isMail = href.startsWith('mailto:');
-  
+
     const scrollY = window.scrollY;
-  
+
     setTimeout(() => {
       if (isMail) {
         window.location.href = href;
@@ -20,13 +20,13 @@ $(function () {
       } else {
         window.location.href = href;
       }
-  
+
       // 위치 복구
       window.scrollTo(0, scrollY);
     }, 50); // 브라우저 처리 직전에 스크롤 복원
   });
-  
-  
+
+
   // let lastScrollTop = window.pageYOffset;
 
   // window.addEventListener('wheel', function (e) {
@@ -43,7 +43,7 @@ $(function () {
   // }, { passive: true });
 
   /* gnb */
- 
+
   $(window).on("scroll", function () {
     const section2Top = $(".section2").offset().top;
     const scrollTop = $(window).scrollTop();
@@ -85,43 +85,43 @@ $(function () {
   };
 
   /* title */
-// ain 등장 애니메이션
-gsap.from(".ain", {
-  opacity: 0,
-  scale: 0.75,     // 살짝 더 탄력 있게
-  y: 30,           // 약간 더 부드럽게
-  duration: 1.2,
-  delay: 0.5,
-  ease: "power3.out"
-});
+  // ain 등장 애니메이션
+  gsap.from(".ain", {
+    opacity: 0,
+    scale: 0.75,     // 살짝 더 탄력 있게
+    y: 30,           // 약간 더 부드럽게
+    duration: 1.2,
+    delay: 0.5,
+    ease: "power3.out"
+  });
 
-// uni 등장 애니메이션
-gsap.from(".uni", {
-  opacity: 0,
-  scale: 0.75,
-  y: 30,
-  duration: 1.3,
-  delay: 0.8,
-  ease: "power3.out"
-});
+  // uni 등장 애니메이션
+  gsap.from(".uni", {
+    opacity: 0,
+    scale: 0.75,
+    y: 30,
+    duration: 1.3,
+    delay: 0.8,
+    ease: "power3.out"
+  });
 
-// ain 부드러운 떠오름 유지
-gsap.to(".ain", {
-  y: 15,
-  duration: 2.3,
-  repeat: -1,
-  yoyo: true,
-  ease: "sine.inOut"
-});
+  // ain 부드러운 떠오름 유지
+  gsap.to(".ain", {
+    y: 15,
+    duration: 2.3,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
 
-// uni 부드러운 무브
-gsap.to(".uni", {
-  y: 13,
-  duration: 2.5,
-  repeat: -1,
-  yoyo: true,
-  ease: "sine.inOut"
-});
+  // uni 부드러운 무브
+  gsap.to(".uni", {
+    y: 13,
+    duration: 2.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
 
 
 
@@ -169,74 +169,78 @@ gsap.to(".uni", {
   });
 
   /* 타이핑 */
-
   let isTyping = false;
   let isIntroPlayed = false;
-  
+  let typingInterval1 = null;
+  let typingInterval2 = null;
+
   const $text1 = $('.typing_text1');
+  const $text2 = $('.typing_text2');
   const $hint = $('.scroll_hint');
   const $ship = $('.spaceship');
-  const $upText = $('.up_text');
+
   const text1 = "MY PLANETS";
-  
-  function typeText($el, text, speed, callback) {
+  const text2 = 
+  `<em>AIN UNIVERSE</em>는 단순한 포트폴리오가 아닌, 내가 만들어가는 감각의 우주입니다.<br>
+  우주는 완벽하게 계산된 듯 보이지만, 그 안엔 늘 예측할 수 없는 움직임이 숨어 있죠.<br>
+  제 디자인도 마찬가지예요, 정돈된 구조 속에 뜻밖의 인터랙션과 감각적인 포인트를 숨겨두었습니다.<br>
+  사용자가 ‘오?’ 하고 멈춰 서는 그 찰나의 경험이, 새로운 시각과 또 다른 우주로 이어지길 바랍니다.`;
+
+  function typeElement($el, fullText, speed, callback) {
+    $el.html('');
+    $el.addClass('visible');
+
     let i = 0;
-    $el.text('');
-    $el.css('opacity', 1).addClass('visible'); // ✅ 여기 추가
     const interval = setInterval(() => {
-      $el.text(text.slice(0, ++i));
-      if (i >= text.length) {
+      $el.html(fullText.slice(0, i + 1));
+      i++;
+      if (i >= fullText.length) {
         clearInterval(interval);
         if (callback) callback();
       }
     }, speed);
+    return interval;
   }
-  
+
   function startTypingAndFly() {
     if (isTyping || isIntroPlayed) return;
-  
+
     isTyping = true;
     isIntroPlayed = true;
-  
-    $text1.text('').css('opacity', 0);
-    $upText.css({ opacity: 0, transform: 'translateY(-20px)' });
+
+    $text1.html('').removeClass('visible');
+    $text2.html('').removeClass('visible');
     $hint.fadeOut();
-  
+
+    clearInterval(typingInterval1);
+    clearInterval(typingInterval2);
+
     $ship.removeClass('on');
-    void $ship[0].offsetWidth;
+    void $ship[0].offsetWidth; // reflow
     $ship.addClass('on');
-  
-    typeText($text1, text1, 100, () => {
-      // up_text 재등장
-      gsap.fromTo($upText,
-        { opacity: 0, y: -20 },       // 시작 상태
-        {
-          opacity: 1,
-          y: 0,                       // 끝 상태
-          delay: 0.3,                 // ✨ 딜레이 유지 가능!
-          duration: 1.2,
-          ease: 'power2.out'
-        }
-      );
-      
-      // 힌트는 미리 살짝 빨리 등장
-      setTimeout(() => {
+
+    typingInterval1 = typeElement($text1, text1, 100, () => {
+      typingInterval2 = typeElement($text2, text2, 40, () => {
         isTyping = false;
-        $hint.fadeIn(800, () => {
-          $hint.addClass('blinking');
-        });
-      }, 1000); // ← 원하는 타이밍 조정 가능
+        $hint.fadeIn();
+      });
     });
   }
-  
+
+  // 스크롤 힌트 클릭 → 다음 섹션 이동
+  $hint.on('click', function () {
+    $('body').removeClass('scroll-lock');
+    $hint.fadeOut();
+    $('html, body').animate({ scrollTop: $('.projects').offset().top }, 600);
+  });
+
   function forceIntroStart() {
     isTyping = false;
     isIntroPlayed = false;
     startTypingAndFly();
     $('body').addClass('scroll-lock');
   }
-  
-  // 스크롤 트리거
+ // 스크롤 트리거
   ScrollTrigger.create({
     trigger: '.intro',
     start: 'top top',
@@ -253,16 +257,6 @@ gsap.to(".uni", {
       $hint.fadeOut();
     }
   });
-  
-  // ↓NEXT 클릭 시 다음 섹션 이동
-  $hint.on('click', function () {
-    $('body').removeClass('scroll-lock');
-    $hint.fadeOut();
-    $('html, body').animate({ scrollTop: $('.projects').offset().top }, 600);
-  });
-  
-  
-
 
 
   /* 궤도 애니 */

@@ -710,6 +710,7 @@ section {
     }
 }
 
+
 .intro .typing_wrapper {
     text-align: center;
     display: flex;
@@ -729,7 +730,7 @@ section {
     opacity: 1;
 }
 
-.intro .typing_text1 {
+ .intro .typing_text1 {
     color: #7DEAFF;
     text-align: center;
     text-shadow: 2px 2px 8px #3647FE;
@@ -740,36 +741,26 @@ section {
     line-height: normal;
     letter-spacing: 2.6px;
 }
-
-.intro .up_text {
+.intro .typing_text2 {
     color: #E3FFCE;
     text-align: center;
     text-shadow: 1px 1px 3px rgba(183, 0, 255, 0.75);
     font-family: 'SUIT';
-    font-size: 26px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 600;
-    line-height: 45px;
-    opacity: 0;
-    transform: translateY(-20px);
-    will-change: opacity, transform;
+    line-height: 40px;
 }
-/* .up_text {
-
-  }
-.intro .up_text.visible  {
-    opacity: 1;
-    transform: translateY(0);
-  } */
-  .intro .up_text em {
+ .intro .typing_text2 em {
     color: #D2FF6A;
     text-shadow: 1px 1px 3px rgba(183, 0, 255, 0.80);
     font-family: "Russo One", sans-serif;
-    font-size: 26px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
-} 
+}
+
 
 .scroll_hint {
     position: absolute;
