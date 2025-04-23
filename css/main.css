@@ -515,15 +515,15 @@ section {
 
 
 /* hover 시 차오르는 부분만 보여짐 */
-.s_icon:hover.low .animated-line {
+.hud_card2:hover .s_icon.low .animated-line {
     stroke-dashoffset: 130;
 }
 
-.s_icon:hover.mid .animated-line {
+.hud_card2:hover .s_icon.mid .animated-line {
     stroke-dashoffset: 95;
 }
 
-.s_icon:hover.high .animated-line {
+.hud_card2:hover .s_icon.high .animated-line {
     stroke-dashoffset: 0;
 }
 
