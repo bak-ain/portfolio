@@ -172,24 +172,39 @@ $(function () {
   let isTyping = false;
   let isIntroPlayed = false;
   let typingInterval1 = null;
-  let typingInterval2 = null;
+  let typingIntervalLoop = null;
 
   const $text1 = $('.typing_text1');
-  const $text2 = $('.typing_text2');
   const $hint = $('.scroll_hint');
   const $ship = $('.spaceship');
 
+  const $typingEm = $('.em_typing em');
+  const $restText = $('.rest_text');
+
   const text1 = "MY PLANETS";
-  const text2 = 
-  `<em>AIN UNIVERSE</em>는 단순한 포트폴리오가 아닌, 내가 만들어가는 감각의 우주입니다.<br>
-  우주는 완벽하게 계산된 듯 보이지만, 그 안엔 늘 예측할 수 없는 움직임이 숨어 있죠.<br>
-  제 디자인도 마찬가지예요, 정돈된 구조 속에 뜻밖의 인터랙션과 감각적인 포인트를 숨겨두었습니다.<br>
-  사용자가 ‘오?’ 하고 멈춰 서는 그 찰나의 경험이, 새로운 시각과 또 다른 우주로 이어지길 바랍니다.`;
+  const emText = "AIN UNIVERSE";
+
+  function typeLoop($el, text, speed) {
+    if (typingIntervalLoop) clearInterval(typingIntervalLoop); // ✅ 중복 방지
+    let i = 0;
+    function loopTyping() {
+      i = 0;
+      $el.text('');
+      typingIntervalLoop = setInterval(() => {
+        $el.text(text.slice(0, ++i));
+        if (i >= text.length) {
+          clearInterval(typingIntervalLoop);
+          setTimeout(loopTyping, 1000); // 반복 간격
+        }
+      }, speed);
+    }
+    loopTyping();
+  }
+
 
   function typeElement($el, fullText, speed, callback) {
     $el.html('');
     $el.addClass('visible');
-
     let i = 0;
     const interval = setInterval(() => {
       $el.html(fullText.slice(0, i + 1));
@@ -209,21 +224,33 @@ $(function () {
     isIntroPlayed = true;
 
     $text1.html('').removeClass('visible');
-    $text2.html('').removeClass('visible');
+    $typingEm.text('');
+    $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
     $hint.fadeOut();
 
     clearInterval(typingInterval1);
-    clearInterval(typingInterval2);
+    clearInterval(typingIntervalLoop);  // ✅ 이전 타이핑 루프 완전히 제거
 
     $ship.removeClass('on');
-    void $ship[0].offsetWidth; // reflow
+    void $ship[0].offsetWidth;
     $ship.addClass('on');
 
     typingInterval1 = typeElement($text1, text1, 100, () => {
-      typingInterval2 = typeElement($text2, text2, 40, () => {
-        isTyping = false;
-        $hint.fadeIn();
-      });
+      typeLoop($typingEm, emText, 80);
+
+      gsap.fromTo($restText,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power2.out',
+          delay: 1,
+          onComplete: () => {
+            isTyping = false;
+            $hint.fadeIn();
+          }
+        });
     });
   }
 
@@ -240,7 +267,21 @@ $(function () {
     startTypingAndFly();
     $('body').addClass('scroll-lock');
   }
- // 스크롤 트리거
+  function resetIntro() {
+    clearInterval(typingInterval1);
+    clearInterval(typingIntervalLoop);
+
+    $text1.html('').removeClass('visible');
+    $typingEm.text('');
+    $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
+    $hint.hide();
+    $ship.removeClass('on');
+
+    isTyping = false;
+    isIntroPlayed = false;
+  }
+
+  // 스크롤 트리거
   ScrollTrigger.create({
     trigger: '.intro',
     start: 'top top',
@@ -250,11 +291,11 @@ $(function () {
     onEnterBack: forceIntroStart,
     onLeave: () => {
       $('body').removeClass('scroll-lock');
-      $hint.fadeOut();
+      resetIntro(); // ✅ 나갈 때 초기화
     },
     onLeaveBack: () => {
       $('body').removeClass('scroll-lock');
-      $hint.fadeOut();
+      resetIntro(); // ✅ 다시 위로 나갈 때도 초기화
     }
   });
 
