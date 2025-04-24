@@ -789,6 +789,7 @@ section {
     font-style: normal;
     font-weight: 600;
     line-height: 40px;
+    opacity: 0;
 }
  .intro .typing_text2 em {
     color: #D2FF6A;
