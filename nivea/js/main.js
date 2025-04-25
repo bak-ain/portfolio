@@ -5,17 +5,17 @@ $(function () {
     // $(window).on("resize", function () {
     //     AOS.refresh(); // 리사이즈될 때 AOS 다시 적용
     //   });
-    $(window).on("resize", function () {
-        $("[data-aos-anchor-placement]").each(function () {
-            if ($(window).width() < 900) {
-                $(this).attr("data-aos-anchor-placement", "top-bottom");
-            } else {
-                $(this).attr("data-aos-anchor-placement", "top-center");
-            }
-        });
+    // $(window).on("resize", function () {
+    //     $("[data-aos-anchor-placement]").each(function () {
+    //         if ($(window).width() < 900) {
+    //             $(this).attr("data-aos-anchor-placement", "top-bottom");
+    //         } else {
+    //             $(this).attr("data-aos-anchor-placement", "top-center");
+    //         }
+    //     });
 
-        AOS.refreshHard(); // 변경된 속성 반영
-    });
+    //     AOS.refreshHard(); 
+    // });
 
     /* promotion_video */
     function controlVideos(swiper) {
