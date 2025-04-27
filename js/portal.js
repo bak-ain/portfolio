@@ -251,7 +251,7 @@ $(function () {
       if (con === '#my_planets') {
         isTyping = false;
         isIntroPlayed = false;
-        $body.addClass('scroll-lock');
+        // $body.addClass('scroll-lock');
       } if (con === '#hidden_portals') {
         $body.addClass('scroll-lock');
       }
