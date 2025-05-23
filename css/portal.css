@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 /* #hidden_portals */
+.section4{
+    width: 100%;
+}
 .portal_wrapper {
     position: relative;
     z-index: 10;
@@ -341,80 +344,94 @@
     height: 180px;
     right: 50%;
 }
-
+.portal_cards.mobile .card {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    /* opacity: 1 !important; */
+    /* animation: none !important; */
+    /* order: initial !important; */
+  }
+  .portal_cards.mobile .qr{
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+  } 
 /* 카드 on클래스 */
 .portal_circle.on .portal_cards .card1 {
     left: 450px;
     top: 100px;
-    animation-delay: 0s
+    animation-delay: 0s;
 }
 
 .portal_circle.on .portal_cards .card2 {
     top: 80px;
     left: 920px;
-    animation-delay: 0.4s
+    animation-delay: 0.4s;
 }
 
 .portal_circle.on .portal_cards .card3 {
     top: 150px;
     right: 400px;
-    animation-delay: 0.8s
+    animation-delay: 0.8s;
 }
 
 .portal_circle.on .portal_cards .card4 {
 
     top: 350px;
     left: 400px;
-    animation-delay: 0.2s
+    animation-delay: 0.2s;
 }
 
 .portal_circle.on .portal_cards .card5 {
 
     left: 680px;
     top: 380px;
-    animation-delay: 0.6s
+    animation-delay: 0.6s;
 }
 
 .portal_circle.on .portal_cards .card6 {
 
     top: 380px;
     left: 1100px;
-    animation-delay: 0s
+    animation-delay: 0s;
 }
 
 .portal_circle.on .portal_cards .card7 {
 
     top: 350px;
     right: 300px;
-    animation-delay: 0.4s
+    animation-delay: 0.4s;
 }
 
 .portal_circle.on .portal_cards .card8 {
 
     top: 550px;
     right: 1300px;
-    animation-delay: 0.6s
+    animation-delay: 0.6s;
 }
 
 .portal_circle.on .portal_cards .card9 {
 
     top: 630px;
     right: 1000px;
-    animation-delay: 0.2s
+    animation-delay: 0.2s;
 }
 
 .portal_circle.on .portal_cards .card10 {
 
     top: 700px;
     right: 660px;
-    animation-delay: 0.8s
+    animation-delay: 0.8s;
 }
 
 .portal_circle.on .portal_cards .card11 {
 
     top: 600px;
     right: 300px;
-    animation-delay: 0s
+    animation-delay: 0s;
 }
 
 /* qr */
@@ -525,8 +542,10 @@
     text-shadow: 0 0 8px #00FFC3;
     cursor: pointer;
     z-index: 9999;
+    opacity: 0;
     /* animation: blink 1.5s infinite; */
   }
   .scroll_hint2.blinking {
     animation: blink 1.5s infinite;
+    opacity: 1;
   }

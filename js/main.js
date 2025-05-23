@@ -3,6 +3,33 @@ $(function () {
   // if ('scrollRestoration' in history) {
   //   history.scrollRestoration = 'manual';
   // }
+
+  function updateGNBLink() {
+    const isMobile = window.innerWidth <= 1024;
+
+    const $gnbLink = $('.g_icon2 a');
+
+    if (isMobile) {
+      $gnbLink.attr('href', '#my_planetsM');
+    } else {
+      $gnbLink.attr('href', '#my_planets');
+    }
+  }
+
+  // 최초 실행
+  updateGNBLink();
+
+  // 창 크기 변경 시 재확인
+  $(window).on('resize', function () {
+    updateGNBLink();
+  });
+
+  document.querySelector('.down').addEventListener('click', () => {
+    const targetSection = document.querySelector('#mission_log'); // 또는 .section2
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
   $('a').on('click', function (e) {
     e.preventDefault(); // 기본 동작 막기
 
@@ -125,301 +152,8 @@ $(function () {
 
 
 
-  /* 가로스크롤 */
-  /* section2 가로스크롤 */
-  const horizontal = document.querySelector('.section2.horizontal');
-  const cards = gsap.utils.toArray('.section2 article');
-  const totalScrollLength = horizontal.scrollWidth - window.innerWidth;
-
-  gsap.to(horizontal, {
-    x: -totalScrollLength,
-    ease: 'none',
-    scrollTrigger: {
-      id: 'horizontalScroll', // ⭐ 이 ID로 나중에 불러올 수 있음
-      trigger: horizontal,
-      start: 'top top',
-      end: () => `+=${totalScrollLength}`,
-      pin: true,
-      scrub: 1.5,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-    }
-  });
-
-  cards.forEach((card, index) => {
-    ScrollTrigger.create({
-      trigger: horizontal,
-      start: 'top top',
-      end: () => `+=${totalScrollLength}`,
-      scrub: 0.5,
-      onUpdate: (self) => {
-        const scrollX = -gsap.getProperty(horizontal, 'x');
-        const centerX = scrollX + window.innerWidth / 2;
-        const cardLeft = card.offsetLeft;
-        const cardRight = cardLeft + card.offsetWidth;
-
-        const extendedRange = 200; // 카드가 사라지기 전 추가 여유 공간
-        const isVisible =
-          cardRight > scrollX + window.innerWidth * 0.25 - extendedRange &&
-          cardLeft < scrollX + window.innerWidth * 0.75 + extendedRange;
-
-        card.classList.toggle('show', isVisible);
-      }
-    });
-  });
-
-  /* 타이핑 */
-  let isTyping = false;
-  let isIntroPlayed = false;
-  let typingInterval1 = null;
-  let typingIntervalLoop = null;
-
-  const $text1 = $('.typing_text1');
-  const $hint = $('.scroll_hint');
-  const $ship = $('.spaceship');
-
-  const $typingEm = $('.em_typing em');
-  const $restText = $('.rest_text');
-
-  const text1 = "MY PLANETS";
-  const emText = "AIN UNIVERSE";
-
-  function typeLoop($el, text, speed) {
-    if (typingIntervalLoop) clearInterval(typingIntervalLoop); // ✅ 중복 방지
-    let i = 0;
-    function loopTyping() {
-      i = 0;
-      $el.text('');
-      typingIntervalLoop = setInterval(() => {
-        $el.text(text.slice(0, ++i));
-        if (i >= text.length) {
-          clearInterval(typingIntervalLoop);
-          setTimeout(loopTyping, 1000); // 반복 간격
-        }
-      }, speed);
-    }
-    loopTyping();
-  }
 
 
-  function typeElement($el, fullText, speed, callback) {
-    $el.html('');
-    $el.addClass('visible');
-    let i = 0;
-    const interval = setInterval(() => {
-      $el.html(fullText.slice(0, i + 1));
-      i++;
-      if (i >= fullText.length) {
-        clearInterval(interval);
-        if (callback) callback();
-      }
-    }, speed);
-    return interval;
-  }
-
-  function startTypingAndFly() {
-    if (isTyping || isIntroPlayed) return;
-
-    isTyping = true;
-    isIntroPlayed = true;
-
-    $text1.html('').removeClass('visible');
-    $typingEm.text('');
-    $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
-    $hint.fadeOut();
-
-    clearInterval(typingInterval1);
-    clearInterval(typingIntervalLoop);  // ✅ 이전 타이핑 루프 완전히 제거
-
-    $ship.removeClass('on');
-    void $ship[0].offsetWidth;
-    $ship.addClass('on');
-
-    typingInterval1 = typeElement($text1, text1, 100, () => {
-      typeLoop($typingEm, emText, 80);
-
-      gsap.fromTo($restText,
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: 'power2.out',
-          delay: 1,
-          onComplete: () => {
-            isTyping = false;
-            $hint.fadeIn();
-          }
-        });
-    });
-  }
-
-  // 스크롤 힌트 클릭 → 다음 섹션 이동
-  $hint.on('click', function () {
-    $('body').removeClass('scroll-lock');
-    $hint.fadeOut();
-    $('html, body').animate({ scrollTop: $('.projects').offset().top }, 600);
-  });
-
-  function forceIntroStart() {
-    isTyping = false;
-    isIntroPlayed = false;
-    startTypingAndFly();
-    $('body').addClass('scroll-lock');
-  }
-  function resetIntro() {
-    clearInterval(typingInterval1);
-    clearInterval(typingIntervalLoop);
-
-    $text1.html('').removeClass('visible');
-    $typingEm.text('');
-    $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
-    $hint.hide();
-    $ship.removeClass('on');
-
-    isTyping = false;
-    isIntroPlayed = false;
-  }
-
-  // 스크롤 트리거
-  ScrollTrigger.create({
-    trigger: '.intro',
-    start: 'top top',
-    end: '+=100%',
-    pin: true,
-    onEnter: forceIntroStart,
-    onEnterBack: forceIntroStart,
-    onLeave: () => {
-      $('body').removeClass('scroll-lock');
-      resetIntro(); // ✅ 나갈 때 초기화
-    },
-    onLeaveBack: () => {
-      $('body').removeClass('scroll-lock');
-      resetIntro(); // ✅ 다시 위로 나갈 때도 초기화
-    }
-  });
-
-
-  /* 궤도 애니 */
-  function animateOrbitPaths() {
-    $('.orbit_path').each(function (i, el) {
-      const length = el.getTotalLength();
-
-      // 완벽한 초기화
-      gsap.set(el, {
-        strokeDasharray: length,
-        strokeDashoffset: length
-      });
-
-      // 애니메이션
-      gsap.to(el, {
-        strokeDashoffset: 0,
-        duration: 2.5,
-        ease: "power2.out",
-        delay: i * 0.4
-      });
-    });
-  }
-  let hasPlanetAnimated = false;
-
-  function animatePlanets() {
-    $('.section3 .projects .orbit_wrap article').each(function (i, el) {
-      $(el).css('pointer-events', 'none');
-      gsap.fromTo(el,
-        {
-          opacity: 0,
-          onStart: () => el.style.pointerEvents = 'none'
-        },
-        {
-          opacity: 1,
-          pointerEvents: "auto",
-          duration: 1,
-          delay: 1.6 + i * 0.3,
-          ease: "power2.out",
-          onComplete: () => el.style.pointerEvents = 'auto'
-        });
-    });
-
-    hasPlanetAnimated = true;
-  }
-
-  function resetPlanets() {
-    $('.section3 .projects .orbit_wrap article').each(function (i, el) {
-      gsap.set(el, {
-        opacity: 0,
-        pointerEvents: "none"
-      });
-    });
-
-    hasPlanetAnimated = false; // ✅ 다시 애니 가능하게 리셋
-  }
-  ScrollTrigger.create({
-    trigger: '.section3 .projects',
-    start: 'top 80%',
-    onEnter: () => {
-      animateOrbitPaths();
-      animatePlanets(); // ✅ 위에서 아래로 진입 시 애니
-    },
-    onEnterBack: () => {
-      animateOrbitPaths();
-      resetPlanets();   // ✅ 먼저 초기화하고
-      setTimeout(() => animatePlanets(), 50); // ✅ 짧은 시간 후 재실행
-    },
-    onLeaveBack: () => {
-      resetPlanets();
-    },
-    once: false
-  });
-
-
-
-  const orbitCherrisy = gsap.to(".cherrisy", {
-    duration: 30,
-    repeat: -1,
-    ease: "none",
-    motionPath: {
-      path: "#orbitPath3",
-      align: "#orbitPath3",
-      autoRotate: false,
-      alignOrigin: [0.5, 0.5]
-    }
-  });
-
-  const orbitIrun = gsap.to(".irun", {
-    duration: 20,
-    repeat: -1,
-    ease: "none",
-    motionPath: {
-      path: "#orbitPath2",
-      align: "#orbitPath2",
-      autoRotate: false,
-      alignOrigin: [0.5, 0.5]
-    }
-  });
-
-  const orbitNivea = gsap.to(".nivea", {
-    duration: 10,
-    repeat: -1,
-    ease: "none",
-    motionPath: {
-      path: "#orbitPath1",
-      align: "#orbitPath1",
-      autoRotate: false,
-      alignOrigin: [0.5, 0.5]
-    }
-  });
-  $('.projects .planets').hover(
-    function () {
-      orbitCherrisy.pause();
-      orbitIrun.pause();
-      orbitNivea.pause();
-    },
-    function () {
-      orbitCherrisy.resume();
-      orbitIrun.resume();
-      orbitNivea.resume();
-    }
-  );
 
   /* #send_signal */
 
@@ -443,15 +177,6 @@ $(function () {
       }
     });
   });
-  //심플리 스크롤
-  // $('.txtAniBox .txtAni').simplyScroll({
-  //   speed: 2,
-  //   frameRate: 15, // 기본은 40, 숫자 낮을수록 빠름
-  //   pauseOnHover: false,
-  //   pauseOnTouch: true,
-  //   direction: 'forwards',
-  // });
-
 
   //마우스 무브 라인
   const canvas = document.getElementById('mouseTrailCanvas');
@@ -509,26 +234,25 @@ $(function () {
       ease: "sine.inOut",
     });
 
-    // 호버 시 멈추고 덜컹 애니메이션
-    el.addEventListener("mouseenter", () => {
-      float.pause(); // 떠다니는 거 멈추고
+    // 데스크탑에서만 hover 애니메이션 적용
+    if (window.innerWidth > 1024) { // 원하는 기준 너비 (예: 1024px 이상)
+      el.addEventListener("mouseenter", () => {
+        float.pause();
 
-      gsap.timeline()
-        .to(el, { skewX: -12, duration: 0.1, ease: "power1.out" })
-        .to(el, { skewX: 10, duration: 0.1, ease: "power1.out" })
-        .to(el, { skewX: -6, duration: 0.1, ease: "power1.out" })
-        .to(el, { skewX: 4, duration: 0.1, ease: "power1.out" })
-        .to(el, { skewX: -2, duration: 0.1, ease: "power1.out" })
-        .to(el, { skewX: 0, duration: 0.2, ease: "power2.out" });
-    });
+        gsap.timeline()
+          .to(el, { skewX: -12, duration: 0.1, ease: "power1.out" })
+          .to(el, { skewX: 10, duration: 0.1, ease: "power1.out" })
+          .to(el, { skewX: -6, duration: 0.1, ease: "power1.out" })
+          .to(el, { skewX: 4, duration: 0.1, ease: "power1.out" })
+          .to(el, { skewX: -2, duration: 0.1, ease: "power1.out" })
+          .to(el, { skewX: 0, duration: 0.2, ease: "power2.out" });
+      });
 
-
-    // 호버 해제 시 다시 재생
-    el.addEventListener("mouseleave", () => {
-      float.play();
-    });
+      el.addEventListener("mouseleave", () => {
+        float.play();
+      });
+    }
   });
-
 
 
 

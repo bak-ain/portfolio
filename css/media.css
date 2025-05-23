@@ -1,0 +1,986 @@
+@media (hover: none) {
+    .portal_cards .card.shake_hover:hover {
+        opacity: inherit;
+        animation: none;
+    }
+
+    .gnb ul li:hover {
+        animation: none;
+    }
+
+    .section2 article:hover {
+        animation: none;
+    }
+
+    .section2 .hud_card4 ul li:hover a img {
+        transform: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .custom_cursor {
+        display: none;
+    }
+
+    .down {
+        display: flex;
+    }
+
+    .gnb {
+        width: 100%;
+        height: 120px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        padding-inline: 5vw;
+    }
+
+    .gnb ul {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gnb ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 10px;
+    }
+
+    .gnb ul li a img {
+        width: 40px;
+    }
+
+    .gnb ul li.g_icon0 img {
+        width: 42px;
+    }
+
+    .gnb ul li.g_icon1 img {
+        width: 43px;
+    }
+
+    .gnb ul li[data-tooltip]::after {
+        top: 52px;
+        font-size: 12px;
+        opacity: 1;
+        background: transparent;
+        white-space: wrap;
+        text-align: center;
+    }
+
+    .gnb ul li[data-tooltip]::before {
+        display: none;
+    }
+
+    .gnb ul li.g_icon1[data-tooltip]::after {
+        top: 52px;
+    }
+
+    .section1 .tit img {
+        width: 40%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .section1 .tit img.ain {
+        width: 42%;
+        max-width: 210px;
+        left: 8vw;
+        top: 16vh;
+    }
+
+    .section1 .tit img.uni {
+        right: 8vw;
+        bottom: 20vh;
+    }
+
+    .down {
+        bottom: 20px;
+    }
+
+    .down img {
+        width: 36px;
+    }
+
+    .down span {
+        font-size: 14px;
+    }
+    /* .swiper.horizontal{
+        height: 80vh;
+        min-height: 0;
+    } */
+    .horizontal_wrapper .swiper-slide h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .horizontal_wrapper .hud_card1 {
+        width: 350px;
+        height: 400px;
+        gap: 20px;
+        background-image: url(../img/profile_m.svg);
+    }
+
+    .horizontal_wrapper .hud_card1 img {
+        display: none;
+    }
+
+
+
+    .horizontal_wrapper .hud_card1 .top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .horizontal_wrapper .hud_card1 .top ul {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .horizontal_wrapper .hud_card1 .top ul li svg {
+        left: -12px;
+        top: 12px;
+        width: 110px;
+    }
+
+    .horizontal_wrapper .hud_card1 .top ul li span,
+    .horizontal_wrapper .hud_card1 .top ul li b {
+        font-size: 16px;
+    }
+
+    .horizontal_wrapper .hud_card2 {
+        width: 350px;
+        height: 383px;
+        padding-bottom: 20px;
+        background-image: url(../img/skill_m.svg);
+        gap: 20px;
+    }
+
+    .horizontal_wrapper .hud_card2 h2 {
+        margin-top: 30px;
+    }
+
+    .horizontal_wrapper .hud_card2 .inner {
+        transform: scale(0.9);
+    }
+
+    .horizontal_wrapper .hud_card3 {
+        display: none;
+    }
+
+    .horizontal_wrapper .hud_card4 {
+        width: 350px;
+        height: 210px;
+        padding: 20px 10px;
+        background-image: url(../img/contact_m.svg);
+        gap: 10px;
+    }
+
+    .horizontal_wrapper .hud_card4 h2 {
+        margin-top: 10px;
+
+    }
+
+    .horizontal_wrapper .hud_card4 ul li:first-child {
+        margin-right: 0px;
+    }
+
+    .horizontal_wrapper .hud_card4 ul li:nth-child(3) {
+        margin-left: 0;
+    }
+
+    .horizontal_wrapper .hud_card4 ul li a img {
+        width: 40px;
+    }
+
+    .section3 {
+        display: none;
+    }
+
+    .section3_m {
+        display: flex;
+        gap: 5vh;
+    }
+
+    @keyframes fly2 {
+        0% {
+            right: 800px;
+            transform: scale(0.2) rotate(60deg);
+            opacity: 0;
+        }
+
+        100% {
+            right: 5%;
+            top: 4vh;
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    .section3_m .intro .typing_wrapper {
+        width: 90%;
+        /* text-align: justify; */
+    }
+
+    .section3_m .intro .typing_wrapper .typing_text1 {
+        font-size: 10vw;
+    }
+
+    .section3_m .intro .rest_text {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 1px;
+    }
+
+    .section3_m .intro .typing_text2 .em_typing>em {
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+
+    .section3_m .intro .rest_text>em {
+        display: none;
+    }
+
+    .section3_m .projects .projects_wrapper article {
+        width: 220px;
+    }
+
+    .section3_m .projects .projects_wrapper article a {
+        transform: scale(0.7) !important;
+    }
+
+    .section3_m .swiper-pagination.my_pg {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        bottom: 10vh;
+    }
+
+    .portal_wrapper h2.portal_title {
+        text-shadow: 1px 1px 4px rgba(49, 59, 255, 1);
+    }
+
+    .portal_wrapper h2.portal_title {
+        font-size: 8vw;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: black;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .glitch::before {
+        left: -1px;
+        text-shadow: 2px 2px 1px rgba(255, 25, 82, 0.6);
+        animation: glitch-loop-1 2s infinite ease-in-out alternate-reverse;
+    }
+
+    .glitch::after {
+        left: 1px;
+        text-shadow: -3px -3px 1px rgba(21, 0, 254, 0.6);
+        animation: glitch-loop-2 2s infinite ease-in-out alternate-reverse;
+    }
+
+    @keyframes glitch-loop-1 {
+        0% {
+            clip: rect(18px, 9999px, 4px, 0);
+        }
+
+        25% {
+            clip: rect(12px, 9999px, 49px, 0);
+        }
+
+        50% {
+            clip: rect(25px, 9999px, 52px, 0);
+        }
+
+        75% {
+            clip: rect(15px, 9999px, 45px, 0);
+        }
+
+        100% {
+            clip: rect(45px, 9999px, 48px, 0);
+        }
+    }
+
+    @keyframes glitch-loop-2 {
+        0% {
+            top: -0.5px;
+            left: 0.5px;
+            clip: rect(33px, 9999px, 59px, 0);
+        }
+
+        25% {
+            top: -3px;
+            left: 2px;
+            clip: rect(39px, 9999px, 9px, 0);
+        }
+
+        50% {
+            top: -1.5px;
+            left: 1px;
+            clip: rect(34px, 9999px, 5px, 0);
+        }
+
+        75% {
+            top: 0px;
+            left: -2px;
+            clip: rect(47px, 9999px, 26px, 0);
+        }
+
+        100% {
+            top: -0.5px;
+            left: -0.5px;
+            clip: rect(16px, 9999px, 74px, 0);
+        }
+    }
+
+
+
+    .portal_circle {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .portal_circle .circle {
+        width: 112%;
+        left: 50%;
+        top: -4%;
+    }
+
+    .portal_circle.on .circle {
+        transform: scale(5);
+        left: 0;
+    }
+
+    /* 카드 */
+    .portal_circle .portal_cards.mobile {
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        /* gap: 10vw; */
+        align-content: space-evenly;
+        justify-content: space-evenly;
+        height: 80%;
+    }
+
+    .portal_circle .portal_cards.mobile .card {
+        width: 30vw;
+        height: 20vw;
+        gap: 10px;
+        opacity: 0;
+        transition: 0.5s ease;
+        pointer-events: none;
+        position: static;
+        /* position 초기화 */
+        top: auto;
+        /* top 제거 */
+        left: auto;
+        /* left 제거 */
+        right: auto;
+        /* right 제거 */
+        transform: none;
+        /* 필요시 초기화 */
+        border-radius: 3px;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card {
+        opacity: 1;
+    }
+
+    .portal_circle .portal_cards.mobile .card10 {
+        flex-direction: column;
+    }
+
+    .portal_circle .portal_cards.mobile .card a {
+        gap: 20px;
+    }
+
+    @keyframes floatCard2 {
+
+        0%,
+        100% {
+            transform: translateY(8px);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .portal_circle.on .portal_cards.mobile .card {
+        pointer-events: all;
+        position: static;
+        /* position 초기화 */
+        top: auto;
+        /* top 제거 */
+        left: auto;
+        /* left 제거 */
+        right: auto;
+        /* right 제거 */
+        transform: none;
+        /* 필요시 초기화 */
+        /* border: var(--m-purple-card-border); */
+    }
+
+    .portal_circle .portal_cards .card.purple {
+        border: var(--m-purple-card-border);
+    }
+
+    .portal_circle .portal_cards .card.pink {
+        border: var(--m-pink-card-border);
+    }
+
+    .portal_circle .portal_cards .card.blue {
+        border: var(--m-blue-card-border);
+    }
+
+    .portal_circle .portal_cards .card.green {
+        border: var(--m-green-card-border);
+    }
+
+    .portal_circle .portal_cards.mobile .card img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .portal_circle .portal_cards.mobile .card p {
+        font-size: 12px;
+        width: 80%;
+    }
+
+    .portal_circle .portal_cards.mobile .card10 img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    /* 카드 on클래스 */
+    .portal_circle.on .portal_cards.mobile .card {
+        position: static;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card2,
+    .portal_circle.on .portal_cards.mobile .card4,
+    .portal_circle.on .portal_cards.mobile .card6,
+    .portal_circle.on .portal_cards.mobile .card8,
+    .portal_circle.on .portal_cards.mobile .card10 {
+        animation: floatCard2 3.5s ease-in-out infinite;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card3 {
+        animation-delay: 0.8s;
+        order: 7 !important;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card4 {
+        animation-delay: 0.8s;
+        order: 9 !important;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card5 {
+        animation-delay: 0.6s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card6 {
+        animation-delay: 0.6s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card7 {
+        animation-delay: 0.4s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card8 {
+        animation-delay: 0.3s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card9 {
+        animation-delay: 0.2s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card11 {
+        animation-delay: 0.8s;
+    }
+
+    /* qr */
+    .portal_circle .portal_cards.mobile .qr {
+        border: none;
+        background: none;
+        box-shadow: none;
+        display: none;
+        animation: none;
+        position: static;
+        transform: none;
+    }
+
+    .portal_cards.mobile .qr.shown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .portal_circle .portal_cards.mobile .qr img {
+        width: 22vw;
+        height: 22vw;
+    }
+
+    .portal_cards.mobile .card[data-tooltip]::after,
+    .portal_cards.mobile .card[data-tooltip]::before {
+        display: none;
+    }
+
+    .portal_cards.mobile .card2[data-tooltip]::after,
+    .portal_cards.mobile .card3[data-tooltip]::after,
+    .portal_cards.mobile .card4[data-tooltip]::after,
+    .portal_cards.mobile .card10[data-tooltip]::after {
+        opacity: 1;
+        display: block;
+        font-size: 12px;
+        top: -39px;
+    }
+
+
+    .portal_cards.mobile .card2[data-tooltip]::before,
+    .portal_cards.mobile .card3[data-tooltip]::before,
+    .portal_cards.mobile .card4[data-tooltip]::before,
+    .portal_cards.mobile .card10[data-tooltip]::before {
+        opacity: 1;
+        display: block;
+    }
+
+
+    .scroll_hint2 {
+        bottom: 5%;
+        font-size: 16px;
+    }
+
+    /* #send_signal */
+
+    .content h2 {
+        width: 80%;
+        white-space: nowrap;
+        font-size: 6vw;
+        margin-top: 50vh;
+    }
+
+    .content h2::before {
+        font-size: 6vw;
+    }
+
+    .content ul.contacts li a img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .content ul.contacts li a span {
+        font-size: 18px;
+    }
+
+    .content ul.contacts li.email {
+        left: 10vw;
+        top: 70vh;
+    }
+
+    .content ul.contacts li.kakao {
+        right: 15vw;
+        top: 62vh;
+    }
+
+    .content ul.contacts li.insta {
+        left: 50vw;
+        top: 30vh;
+    }
+
+    .txtAniBox {
+        height: 6vw;
+        margin-bottom: 8vh;
+    }
+
+    .txtAniBox ul.txtAni li {
+        font-size: 5vw;
+        margin-right: 4vw;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: portrait),
+screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
+    section {
+        width: 100%;
+        position: relative;
+    }
+
+    .custom_cursor {
+        display: none;
+    }
+
+    .down {
+        display: flex;
+    }
+
+    .gnb {
+        width: 100%;
+        height: 120px;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        padding-inline: 5vw;
+    }
+
+    .gnb ul {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gnb ul li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 10px;
+    }
+
+    .gnb ul li a img {
+        width: 60px;
+    }
+
+    .gnb ul li.g_icon0 img {
+        width: 62px;
+    }
+
+    .gnb ul li.g_icon1 img {
+        width: 63px;
+    }
+
+    .gnb ul li[data-tooltip]::after {
+        top: 72px;
+        font-size: 16px;
+        opacity: 1;
+    }
+
+    .gnb ul li[data-tooltip]::before {
+        top: 66px;
+        opacity: 1;
+        border-bottom-color: #253be599;
+        border-top: none;
+    }
+
+    .gnb ul li.g_icon1[data-tooltip]::after {
+        top: 72px;
+    }
+
+    .gnb ul li.g_icon1[data-tooltip]::before {
+        top: 66px;
+    }
+
+    .section1 .tit img {
+        width: 35vw;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .section1 .tit img.ain {
+        width: 36vw;
+        left: 8vw;
+        top: 8vh;
+    }
+
+    .section1 .tit img.uni {
+        right: 8vw;
+        bottom: 10vh;
+    }
+
+    .section3 {
+        display: none;
+    }
+
+    .section3_m {
+        display: flex;
+    }
+
+    .portal_wrapper h2.portal_title {
+        font-size: 6vw;
+    }
+
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: black;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .glitch::before {
+        left: -1px;
+        text-shadow: 4px 4px 3px rgba(255, 25, 82, 0.6);
+        animation: glitch-loop-1 2s infinite ease-in-out alternate-reverse;
+    }
+
+    .glitch::after {
+        left: 1px;
+        text-shadow: -5px -5px 3px rgba(21, 0, 254, 0.6);
+        animation: glitch-loop-2 2s infinite ease-in-out alternate-reverse;
+    }
+
+
+    .portal_circle {
+        position: relative;
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .portal_circle .circle {
+        width: 112%;
+        left: 50%;
+        top: -4%;
+    }
+
+    .portal_circle.on .circle {
+        transform: scale(3);
+        left: 0;
+    }
+
+    /* 카드 */
+    .portal_circle .portal_cards.mobile {
+        display: flex;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        /* gap: 10vw; */
+        align-content: space-evenly;
+        justify-content: space-evenly;
+    }
+
+    .portal_circle .portal_cards.mobile .card {
+        width: 21vw;
+        height: 15vw;
+        gap: 20px;
+        opacity: 0;
+        transition: 0.5s ease;
+        pointer-events: none;
+        position: static;
+        /* position 초기화 */
+        top: auto;
+        /* top 제거 */
+        left: auto;
+        /* left 제거 */
+        right: auto;
+        /* right 제거 */
+        transform: none;
+        /* 필요시 초기화 */
+    }
+
+    .portal_circle.on .portal_cards.mobile .card {
+        opacity: 1;
+    }
+
+    .portal_circle .portal_cards.mobile .card10 {
+        flex-direction: column;
+    }
+
+    .portal_circle .portal_cards.mobile .card a {
+        gap: 20px;
+    }
+
+    @keyframes floatCard2 {
+
+        0%,
+        100% {
+            transform: translateY(8px);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .portal_circle.on .portal_cards.mobile .card {
+        pointer-events: all;
+        position: static;
+        /* position 초기화 */
+        top: auto;
+        /* top 제거 */
+        left: auto;
+        /* left 제거 */
+        right: auto;
+        /* right 제거 */
+        transform: none;
+        /* 필요시 초기화 */
+    }
+
+    .portal_circle .portal_cards.mobile .card img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .portal_circle .portal_cards.mobile .card p {
+        font-size: 1.8vw;
+    }
+
+    .portal_circle .portal_cards.mobile .card10 img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    /* 카드 on클래스 */
+    .portal_circle.on .portal_cards.mobile .card {
+        position: static;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card2,
+    .portal_circle.on .portal_cards.mobile .card4,
+    .portal_circle.on .portal_cards.mobile .card6,
+    .portal_circle.on .portal_cards.mobile .card8,
+    .portal_circle.on .portal_cards.mobile .card10 {
+        animation: floatCard2 3.5s ease-in-out infinite;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card3 {
+        animation-delay: 0.8s;
+        order: 7 !important;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card4 {
+        animation-delay: 0.8s;
+        order: 9 !important;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card5 {
+        animation-delay: 0.6s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card6 {
+        animation-delay: 0.6s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card7 {
+        animation-delay: 0.4s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card8 {
+        animation-delay: 0.3s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card9 {
+        animation-delay: 0.2s;
+    }
+
+    .portal_circle.on .portal_cards.mobile .card11 {
+        animation-delay: 0.8s;
+    }
+
+    /* qr */
+    .portal_circle .portal_cards.mobile .qr {
+        border: none;
+        background: none;
+        box-shadow: none;
+        display: none;
+        animation: none;
+        position: static;
+        transform: none;
+    }
+
+    .portal_cards.mobile .qr.shown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .portal_circle .portal_cards.mobile .qr img {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .portal_cards.mobile .card[data-tooltip]::after,
+    .portal_cards.mobile .card[data-tooltip]::before {
+        display: none;
+    }
+
+    .portal_cards.mobile .card2[data-tooltip]::after,
+    .portal_cards.mobile .card3[data-tooltip]::after,
+    .portal_cards.mobile .card4[data-tooltip]::after,
+    .portal_cards.mobile .card10[data-tooltip]::after {
+        opacity: 1;
+        display: block;
+    }
+
+
+    .portal_cards.mobile .card2[data-tooltip]::before,
+    .portal_cards.mobile .card3[data-tooltip]::before,
+    .portal_cards.mobile .card4[data-tooltip]::before,
+    .portal_cards.mobile .card10[data-tooltip]::before {
+        opacity: 1;
+        display: block;
+    }
+
+
+    .scroll_hint2 {
+        bottom: 5%;
+        font-size: 3vw;
+    }
+
+    /* #send_signal */
+
+    .content h2 {
+        width: 80%;
+        white-space: nowrap;
+        font-size: 6vw;
+        margin-top: 50vh;
+    }
+
+    .content h2::before {
+        font-size: 6vw;
+    }
+
+    .content ul.contacts li a img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .content ul.contacts li a span {
+        font-size: 2.6vw;
+    }
+
+    .content ul.contacts li.email {
+        left: 10vw;
+        top: 70vh;
+    }
+
+    .content ul.contacts li.kakao {
+        right: 15vw;
+        top: 62vh;
+    }
+
+    .content ul.contacts li.insta {
+        left: 50vw;
+        top: 30vh;
+    }
+
+    .txtAniBox {
+        height: 4vw;
+    }
+
+    .txtAniBox ul.txtAni li {
+        font-size: 3vw;
+        margin-right: 4vw;
+    }
+}
