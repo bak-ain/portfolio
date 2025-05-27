@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="니베아, 신뢰감을 주는 미니멀하고 깔끔한 디자인으로 새롭게 리뉴얼. 누구나 쉽게 사용할 수 있는 직관적인 사용자 경험을 제공합니다. 피부를 위한 간결하면서도 효과적인 케어를 만나보세요.">
+    <meta name="keywords" content="니베아, NIVEA, 스킨케어, 미니멀 디자인, 신뢰감, 직관적인 UX, 심플한 UI, 피부 관리, 보습 크림, 로션, 바디케어" />
+    <meta name="author" content="Bak Ahin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHuman.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/products.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+
+
+<body>
+    <div id="header"></div>
+    <div class="wrap">
+        <main class="product">
+
+            <div class="top_btn"><a href="#"></a></div>
+            <div class="pd_top">
+                <!-- 경로 안내 -->
+                <div class="breadcrumb inner" aria-label="경로 표시" id="breadcrumb">
+                    <!-- <span>전체제품</span> &gt; <span id="current-category">바디</span> -->
+                </div>
+
+                <!-- 1차 탭 -->
+                <div class="primary_tab_wrap inner" aria-label="카테고리 탭">
+                    <ul class="primary_tab">
+                        <li data-category="전체보기"><a href="#">전체보기</a></li>
+                        <li data-category="베스트"><a href="#">베스트</a></li>
+                        <li data-category="페이스"><a href="#">페이스</a></li>
+                        <li data-category="바디"><a href="#">바디</a></li>
+                        <li data-category="선"><a href="#">선</a></li>
+                        <li data-category="니베아맨"><a href="#">니베아맨</a></li>
+                    </ul>
+                </div>
+
+                <!-- 2차 탭 -->
+                <div class="secondary_tab_bg" aria-label="세부 카테고리 탭">
+                    <ul class="secondary_tab inner" id="subcategory-list">
+                        <!-- JS로 렌더링 -->
+                    </ul>
+                </div>
+            </div><!-- //.pd_top -->
+            <div class="pd_bottom inner">
+                <div class="product_top">
+                    <p><strong>총 <span>20</span>개</strong>의 상품이 있습니다.</p>
+                    <select>
+                        <option>추천순</option>
+                        <option>낮은 가격순</option>
+                        <option>높은 가격순</option>
+                    </select>
+                </div>
+                <div class="con">
+                    <!-- 필터 + 정렬 -->
+                    <div class="product_util">
+                        <aside class="filter_wrap">
+                            <button class="filter_reset">리셋하기</button>
+
+                            <div class="filter_group">
+                                <h4>피부타입</h4>
+                                <label><input type="checkbox"> 모든 피부</label>
+                                <label><input type="checkbox"> 건조한 피부</label>
+                                <label><input type="checkbox"> 매우 건조한 피부</label>
+                                <label><input type="checkbox"> 보통 피부</label>
+                                <label><input type="checkbox"> 어린이 피부</label>
+                            </div>
+
+                            <div class="filter_group">
+                                <h4>제품타입</h4>
+                                <label><input type="checkbox"> 데오드란트</label>
+                                <label><input type="checkbox"> 바디케어</label>
+                                <label><input type="checkbox"> 페이스크림</label>
+                                <label><input type="checkbox"> 선케어</label>
+                                <label><input type="checkbox"> 쉐이빙</label>
+                                <label><input type="checkbox"> 핸드케어</label>
+                                <label><input type="checkbox"> 립케어</label>
+                            </div>
+
+                            <div class="filter_group">
+                                <h4>사용대상</h4>
+                                <label><input type="checkbox"> 여성</label>
+                                <label><input type="checkbox"> 남성</label>
+                                <label><input type="checkbox"> 베이비</label>
+                            </div>
+
+                            <div class="filter_group">
+                                <h4>가격대</h4>
+                                <label><input type="checkbox"> 1만원 미만</label>
+                                <label><input type="checkbox"> 1만원 대</label>
+                                <label><input type="checkbox"> 2만원 대</label>
+                                <label><input type="checkbox"> 3만원 이상</label>
+                            </div>
+
+                            <div class="filter_group">
+                                <label><input type="checkbox"> 베스트셀러</label>
+                            </div>
+                        </aside>
+
+                    </div>
+
+                    <!-- 제품 리스트 -->
+                    <div class="bottom_right">
+                        <section class="product_list best_seller">
+                            <ul class="bs_list pd_list" id="product-list">
+                                <!-- JS에서 동적으로 삽입 -->
+                            </ul>
+                        </section>
+
+                        <!-- 페이징 -->
+                        <div class="pagination" id="pagination-container">
+                            <ul></ul>
+                        </div>
+
+                    </div><!-- //.bottom_right -->
+                </div><!-- //.con -->
+            </div><!-- //.pd_bottom -->
+        </main>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
