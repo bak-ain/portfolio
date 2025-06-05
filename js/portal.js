@@ -263,7 +263,10 @@ $(function () {
       $('.portal_cards').removeClass('mobile');
       isMobilePortalInitialized = false;
       resetPortal(false);
-      if (!hiddenPortalTrigger) initScrollTriggers();
+      setTimeout(() => {
+        if (!hiddenPortalTrigger) initScrollTriggers();
+        ScrollTrigger.refresh(); // <- 더 확실히 보장
+      }, 300);
       $body.removeClass('scroll-lock');
     }
 

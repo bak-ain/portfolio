@@ -1,5 +1,4 @@
 $(function () {
-<<<<<<< HEAD
     let ITEMS_PER_PAGE = getItemsPerPage();
 
     function getItemsPerPage() {
@@ -20,32 +19,15 @@ $(function () {
         "바디": [], //"바디로션", "데오드란트", "핸드케어"
         "선": [], //"멀티", "페이스", "바디", "키즈"
         "니베아맨": [] //"쉐이빙", "데오드란트", "클렌징"
-=======
-    const ITEMS_PER_PAGE = 12;
-    const subCategories = {
-        "베스트": [],
-        "페이스": ["크림", "립케어"],
-        "바디": ["바디로션", "데오드란트", "핸드케어"],
-        "선": ["멀티", "페이스", "바디", "키즈"],
-        "니베아맨": ["쉐이빙", "데오드란트", "클렌징"]
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
     };
 
     let currentSortOption = '추천순';
 
-<<<<<<< HEAD
     const allProducts = [
         {
             "image": "img/best_seller1.png",
             "title": "니베아 인샤워 바디로션 나리싱",
             "volume": " 400ml 1+1",
-=======
-       const allProducts = [
-        {
-            "image": "img/best_seller1.png",
-            "title": "니베아 인샤워 바디로션 나리싱",
-            "volume": "400ml 1+1",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "29%",
             "original": "33,800원",
             "price": "23,700원",
@@ -71,11 +53,7 @@ $(function () {
         {
             "image": "img/best_seller2.png",
             "title": "히알루론 모이스쳐 플러스 립케어",
-<<<<<<< HEAD
             "volume": " 5.2g X 4",
-=======
-            "volume": "5.2g X 4",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "23%",
             "original": "23,600원",
             "price": "18,100원",
@@ -99,13 +77,8 @@ $(function () {
         },
         {
             "image": "img/best_seller3.png",
-<<<<<<< HEAD
             "title": "소프트 리프레싱 모이스쳐 크림",
             "volume": " 200ml X 2",
-=======
-            "title": "소프트 리프레싱 모이스춰 크림",
-            "volume": "200ml X 2",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "10%",
             "original": "15,200원",
             "price": "13,600원",
@@ -133,11 +106,7 @@ $(function () {
         {
             "image": "img/best_seller4.png",
             "title": "니베아 SOS 케어 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml 1+1",
-=======
-            "volume": "400ml 1+1",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "50%",
             "original": "37,800원",
             "price": "18,900원",
@@ -164,11 +133,7 @@ $(function () {
         {
             "image": "img/인텐시브케어.png",
             "title": "니베아 인텐시브 케어 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml 1+1",
-=======
-            "volume": "400ml 1+1",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "53%",
             "original": "33,800원",
             "price": "15,700원",
@@ -194,11 +159,7 @@ $(function () {
         {
             "image": "img/인텐시브로션.png",
             "title": "니베아 인텐시브 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml 1+1",
-=======
-            "volume": "400ml 1+1",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "51%",
             "original": "33,800원",
             "price": "16,562원",
@@ -224,11 +185,7 @@ $(function () {
         {
             "image": "img/큐텐바디로션.png",
             "title": "니베아 Q10 화이트 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml 1+1",
-=======
-            "volume": "400ml 1+1",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "52%",
             "original": "33,800원",
             "price": "16,050원",
@@ -253,11 +210,7 @@ $(function () {
         {
             "image": "img/인텐시브케어바디로션.png",
             "title": "니베아 인텐시브 케어 바디로션",
-<<<<<<< HEAD
             "volume": " 125ml X 3ea",
-=======
-            "volume": "125ml X 3ea",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "14,100원",
@@ -282,11 +235,7 @@ $(function () {
         {
             "image": "img/sos바디로션1.png",
             "title": "니베아 SOS 케어 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "18,900원",
@@ -311,11 +260,7 @@ $(function () {
         {
             "image": "img/큐텐바디로션1.png",
             "title": "니베아 Q10 화이트 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "16,900원",
@@ -340,11 +285,7 @@ $(function () {
         {
             "image": "img/인텐시브케어바디로션2.png",
             "title": "니베아 인텐시브 케어 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "16,900원",
@@ -369,11 +310,7 @@ $(function () {
         {
             "image": "img/인텐시브로션1.png",
             "title": "니베아 인텐시브 바디로션",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "10,900원",
@@ -398,11 +335,7 @@ $(function () {
         {
             "image": "img/나리싱.png",
             "title": "니베아 인샤워 바디로션 나리싱",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "16,900원",
@@ -427,11 +360,7 @@ $(function () {
         {
             "image": "img/리페어로션.png",
             "title": "니베아 리페어 & 케어 바디 로션",
-<<<<<<< HEAD
             "volume": " 625ml",
-=======
-            "volume": "625ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "21,500원",
@@ -456,11 +385,7 @@ $(function () {
         {
             "image": "img/인샤워코코아버터.png",
             "title": "인샤워 바디로션 코코아 버터",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "16,500원",
@@ -485,11 +410,7 @@ $(function () {
         {
             "image": "img/에프터선모이스춰.png",
             "title": "니베아 애프터 썬로션",
-<<<<<<< HEAD
             "volume": " 200ml",
-=======
-            "volume": "200ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "14,500원",
@@ -515,11 +436,7 @@ $(function () {
         {
             "image": "img/선터치로션.png",
             "title": "니베아 선 터치 태닝 바디 로션",
-<<<<<<< HEAD
             "volume": " 400ml",
-=======
-            "volume": "400ml",
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
             "discount": "",
             "original": "",
             "price": "17,200원",
@@ -587,7 +504,6 @@ $(function () {
         }
     }
 
-<<<<<<< HEAD
     function renderProducts(category, sub = null) {
         let products = allProducts.filter(p => p.category.includes(category));
         if (sub) {
@@ -596,8 +512,6 @@ $(function () {
         renderFilteredProducts(products);
     }
 
-=======
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
     function renderFilteredProducts(products, currentPage = 1) {
         const $list = $('.pd_list');
         $list.empty();
@@ -738,7 +652,6 @@ $(function () {
     const initCategory = getQueryParam('category') || '전체보기';
     renderTabs(initCategory);
     updateBreadcrumb(initCategory);
-<<<<<<< HEAD
 
     // 브레드크럼 '제품' 클릭 시 전체보기로 이동
     $(document).on('click', '#breadcrumb span:first-child', function () {
@@ -753,6 +666,4 @@ $(function () {
         $('.secondary_tab').hide();
     });
 
-=======
->>>>>>> 2eaf21d3853a951cb36ecde3c1c0d1dba3298fa7
 });

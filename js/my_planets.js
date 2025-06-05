@@ -293,7 +293,7 @@ $(function () {
       setTimeout(() => {
         createScrollTriggers();
         ScrollTrigger.refresh();
-      }, 100); // ← 이 딜레이가 중요합니다!
+      }, 300); // ← 이 딜레이가 중요합니다!
 
       $('body').removeClass('scroll-lock');
     }
