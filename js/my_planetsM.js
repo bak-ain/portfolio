@@ -49,6 +49,7 @@ $(function () {
     // 인트로 시작 애니메이션
     function startTypingAndFly() {
         if (isTyping) return;
+        $('body').removeClass('scroll-lock');
 
         isTyping = true;
 
@@ -77,6 +78,7 @@ $(function () {
                     delay: 1,
                     onComplete: () => {
                         isTyping = false;
+                        typingDone = true;
                         // $hint.fadeIn();
                     }
                 });
@@ -101,6 +103,7 @@ $(function () {
             }
         } else {
             hasEnteredMyPlanets = false;
+            typingDone = false;
         }
     });
 
@@ -108,22 +111,33 @@ $(function () {
     startTypingAndFly();
 
 
+    let projectsSlide;
+    function initSwiper() {
+        let offset = window.innerWidth <= 768
+            ? window.innerWidth * 0.08
+            : window.innerWidth * 0.1;
 
-    if (window.innerWidth <= 768) {
-        // 모바일: 더 작은 offset (예: 5%)
-        offset = window.innerWidth * 0.08;
-    } else {
-        // 태블릿/PC: 기본값 (예: 10%)
-        offset = window.innerWidth * 0.1;
+
+        if (projectsSlide) {
+            projectsSlide.destroy(true, true);
+        }
+
+        projectsSlide = new Swiper("#my_projects", {
+            slidesPerView: 'auto',
+            spaceBetween: offset,
+            slidesOffsetBefore: offset,
+            slidesOffsetAfter: offset,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
     }
-    let projectsSlide = new Swiper("#my_projects", {
-        slidesPerView: 'auto',
-        spaceBetween: offset,
-        slidesOffsetBefore: offset,
-        slidesOffsetAfter: offset,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
+
+    initSwiper();
+
+    window.addEventListener('resize', () => {
+        initSwiper();
     });
+
 })

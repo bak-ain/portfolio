@@ -223,37 +223,46 @@ $(function () {
 
   draw();
 
-  document.querySelectorAll('.contacts li').forEach((el) => {
-    // 둥둥 떠다니는 애니메이션
-    const float = gsap.to(el, {
-      x: () => gsap.utils.random(-50, 50),
-      y: () => gsap.utils.random(-50, 50),
-      duration: () => gsap.utils.random(2, 4),
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
+  function setupFloatingContacts() {
+    document.querySelectorAll('.contacts li').forEach((el) => {
+      gsap.killTweensOf(el); // 기존 트윈 제거
+      const float = gsap.to(el, {
+        x: () => gsap.utils.random(-50, 50),
+        y: () => gsap.utils.random(-50, 50),
+        duration: () => gsap.utils.random(2, 4),
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      el.onmouseenter = null;
+      el.onmouseleave = null;
+
+      if (window.innerWidth > 1024) {
+        el.addEventListener("mouseenter", () => {
+          float.pause();
+          gsap.timeline()
+            .to(el, { skewX: -12, duration: 0.1 })
+            .to(el, { skewX: 10, duration: 0.1 })
+            .to(el, { skewX: -6, duration: 0.1 })
+            .to(el, { skewX: 4, duration: 0.1 })
+            .to(el, { skewX: -2, duration: 0.1 })
+            .to(el, { skewX: 0, duration: 0.2 });
+        });
+        el.addEventListener("mouseleave", () => {
+          float.play();
+        });
+      }
     });
+  }
 
-    // 데스크탑에서만 hover 애니메이션 적용
-    if (window.innerWidth > 1024) { // 원하는 기준 너비 (예: 1024px 이상)
-      el.addEventListener("mouseenter", () => {
-        float.pause();
+  // 최초 실행
+  setupFloatingContacts();
 
-        gsap.timeline()
-          .to(el, { skewX: -12, duration: 0.1, ease: "power1.out" })
-          .to(el, { skewX: 10, duration: 0.1, ease: "power1.out" })
-          .to(el, { skewX: -6, duration: 0.1, ease: "power1.out" })
-          .to(el, { skewX: 4, duration: 0.1, ease: "power1.out" })
-          .to(el, { skewX: -2, duration: 0.1, ease: "power1.out" })
-          .to(el, { skewX: 0, duration: 0.2, ease: "power2.out" });
-      });
-
-      el.addEventListener("mouseleave", () => {
-        float.play();
-      });
-    }
+  // 💡 리사이즈 시 다시 바인딩
+  window.addEventListener('resize', () => {
+    setupFloatingContacts();
   });
 
-
-
+ 
 }); //ready end

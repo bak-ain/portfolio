@@ -110,6 +110,7 @@
     .down span {
         font-size: 14px;
     }
+
     /* .swiper.horizontal{
         height: 80vh;
         min-height: 0;
@@ -199,13 +200,17 @@
         width: 40px;
     }
 
-    .section3 {
+    /* .section3 {
         display: none;
-    }
+    } */
 
     .section3_m {
-        display: flex;
-        gap: 5vh;
+        /* display: flex; */
+        gap: 0;
+    }
+
+    .section3_m .intro {
+        height: max-content;
     }
 
     @keyframes fly2 {
@@ -217,7 +222,7 @@
 
         100% {
             right: 5%;
-            top: 4vh;
+            top: -100%;
             transform: scale(1) rotate(0deg);
             opacity: 1;
         }
@@ -243,7 +248,7 @@
         letter-spacing: 1.5px;
     }
 
-    .section3_m .intro .rest_text>em {
+    .section3_m .intro .typing_text2 {
         display: none;
     }
 
