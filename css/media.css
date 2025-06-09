@@ -258,6 +258,16 @@
 
     .section3_m .projects .projects_wrapper article a {
         transform: scale(0.7) !important;
+        gap: 0;
+    }
+
+    .section3_m .projects .projects_wrapper article a>img {
+        width: 150px;
+        height: auto;
+    }
+
+    .section3_m .projects .projects_wrapper article.irun>a img {
+        width: 160px;
     }
 
     .section3_m .swiper-pagination.my_pg {
