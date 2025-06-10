@@ -107,6 +107,7 @@ $(function () {
   function resetIntro() {
     clearInterval(typingInterval1);
     clearInterval(typingIntervalLoop);
+    $('body').removeClass('scroll-lock');
 
     $text1.html('').removeClass('visible');
     $typingEm.text('');
