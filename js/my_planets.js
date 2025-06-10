@@ -144,7 +144,7 @@ $(function () {
       },
       onEnterBack: () => {
         resetPlanets();
-        setTimeout(animatePlanets, 50);
+        animatePlanets();
       },
       onLeaveBack: resetPlanets
     });

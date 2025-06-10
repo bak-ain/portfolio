@@ -222,7 +222,7 @@
 
         100% {
             right: 5%;
-            top: -100%;
+            top: -90%;
             transform: scale(1) rotate(0deg);
             opacity: 1;
         }

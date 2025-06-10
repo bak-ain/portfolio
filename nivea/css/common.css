@@ -34,7 +34,7 @@
     --web-gnb-borderR: #A6C8EB;
     --tb-gnb-icon: #3B70A9;
     --tb-gnb-subtxt: #738496;
-    --tb-gnb-borderR: #A6C8EB;
+    --tb-gnb-borderR: #b7e9e2;
 }
 
 body {
@@ -71,8 +71,8 @@ body {
 
 /* tb_nav */
 header .ham{
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
     background: url(../img/ham.png) no-repeat center/cover;
     position: absolute;
     left: 0;
@@ -83,7 +83,7 @@ header .ham{
 .fix {
     width: 530px;
     height: 100vh;
-    background: #fff;
+    background: var(--point-color-gr);
     position: absolute;
     left: -1000px;
     top: 0;
@@ -136,7 +136,7 @@ header .ham{
 }
 
 .fix .ham_gnb li {
-    color: var(--main-color);
+    color: #fff;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -174,7 +174,7 @@ header .ham{
 }
 
 .fix .ham_gnb li .ham_sub li {
-    color: #51769F;
+    color: #f3f3f3;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -201,7 +201,7 @@ header .ham{
 }
 
 .fix .ham_join .join_m li a {
-    color: var(--tb-gnb-subtxt);
+    color: #fff;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -526,7 +526,8 @@ nav .gnb>li .sub li a {
 }
 nav .gnb>li .sub li:hover a{
     font-size: 22px;
-    opacity: .4;
+    /* opacity: .4; */
+    color: var(--main-color);
 }
 
 
