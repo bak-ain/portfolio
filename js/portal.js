@@ -170,7 +170,22 @@ $(function () {
   $('.card4').on('click', function (e) {
     e.preventDefault();
     if (isDragging) return;
-    resetPortal(false);
+    $cards.each(function (i) {
+      const $card = $(this);
+      $card.removeClass(colorClasses.join(' ')).addClass(defaultColors[i]);
+      $card.css({ top: '', left: '', right: '', transform: 'translate(0, 0)' });
+      $card.attr('data-x', 0).attr('data-y', 0);
+
+      const pos = positions[i];
+      if (pos.left !== undefined) {
+        $card.css({ top: pos.top + 'px', left: pos.left + 'px' });
+      } else {
+        $card.css({ top: pos.top + 'px', right: pos.right + 'px' });
+      }
+    });
+
+    gsap.to($qr, { opacity: 0, scale: 1, y: 0 });
+    $qr.removeClass('shown');
   });
 
   $('.portal_cards .card').hover(

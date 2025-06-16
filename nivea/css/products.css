@@ -793,7 +793,8 @@ main {
     .primary_tab li a {
         width: 100%;
     }
-/* 
+
+    /* 
     .filter_wrap {
         gap: 30px;
     }
@@ -922,7 +923,18 @@ main {
         font-size: 15px;
     }
 
-        .product .product_list .pd_list {
+    .product .product_list .pd_list {
         gap: 40px 17px;
-        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .product .product_list .pd_list {
+        gap: 40px 10px;
+        justify-content: center;
+    }
+
+    .primary_tab li {
+        font-size: 17px;
+    }
 }

@@ -107,7 +107,7 @@
 
     .section1 .tit img.uni {
         right: 8vw;
-        bottom: 20vh;
+        bottom: 22vh;
     }
 
     .down {
@@ -119,7 +119,7 @@
     }
 
     .down span {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     /* .swiper.horizontal{
@@ -568,7 +568,7 @@
         display: none;
     }
 
-    .portal_cards.mobile .card2[data-tooltip]::after,
+    /* .portal_cards.mobile .card2[data-tooltip]::after, */
     .portal_cards.mobile .card3[data-tooltip]::after,
     .portal_cards.mobile .card4[data-tooltip]::after,
     .portal_cards.mobile .card10[data-tooltip]::after {
@@ -579,7 +579,7 @@
     }
 
 
-    .portal_cards.mobile .card2[data-tooltip]::before,
+    /* .portal_cards.mobile .card2[data-tooltip]::before, */
     .portal_cards.mobile .card3[data-tooltip]::before,
     .portal_cards.mobile .card4[data-tooltip]::before,
     .portal_cards.mobile .card10[data-tooltip]::before {
