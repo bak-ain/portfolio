@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 767px) {
-    .section1{
+    .section1 {
         width: 100%;
         min-height: 90vh;
         height: 90vh;
@@ -267,14 +267,19 @@
         width: 220px;
     }
 
-    .section3_m .projects .projects_wrapper article a {
+    .section3_m .projects .projects_wrapper article {
         transform: scale(0.7) !important;
         gap: 0;
     }
 
-    .section3_m .projects .projects_wrapper article a>img {
+    .section3_m .projects .projects_wrapper article> :first-child,
+    .nivea a>img {
         width: 150px;
         height: auto;
+    }
+
+    .section3_m .projects .projects_wrapper article.irun a>img {
+        width: 150px;
     }
 
     .section3_m .projects .projects_wrapper article.irun>a img {
