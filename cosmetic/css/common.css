@@ -1,0 +1,256 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&family=Playfair+Display:ital,wght@0,400..900;1,400..900');
+/* 
+  font-family: "Roboto", serif;
+  font-family: "Open Sans", serif;
+  font-family: "Roboto Serif", serif;
+*/
+:root{
+    --main-color: #e84393;
+    --main-hotpink: #e84393;
+    --main-pink: #fd79a8;
+    --main-red: #d63031;
+    --main-rpink: #ff7675;
+    --main-orange-d: #e17055;
+    --main-orange-l: #fab1a0;
+    --main-yellow-d: #fdcb6e;
+    --main-yellow-l: #ffeaa7;
+    --main-violet: #6c5ce7;
+    --main-violet-l: #a29bfe;
+    --main-blue: #0984e3;
+    --main-blue-l: #74b9ff;
+    --main-aqua-d: #00cec9;
+    --main-aqua-l: #81ecec;
+    --main-green-d: #00b894;
+    --main-green-l: #55efc4;
+    --w-color: #fff;
+    --Roboto-serif:"Roboto Serif", serif;
+    --Playfair : "Playfair Display", serif;
+}
+::selection{
+    background-color: var(--main-orange-l);
+    color: var(--w-color);
+}
+
+*{box-sizing: border-box;}
+body{
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.inner{
+    margin-inline: auto;
+    width: 95%;
+    max-width: 1700px;
+}
+header{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0; top: 0;
+    z-index: 10;
+}
+header .fix{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    display: flex;
+    transition: .6s;
+    background: var(--main-rpink);
+}
+header.on .fix{
+    right: 0;
+}
+header .fix .img_box{
+    flex: 1;
+    background: url(../asset/img/fix_imgbox_bg.jpg) center/cover;
+    font-size: 2rem;
+    color: var(--main-yellow-l);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+header .fix .img_box p{
+    color: #333;
+    font-family: var(--Playfair);
+    font-size: 3.7rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.fix .gnb{
+    flex: 1;
+    background: var(--main-rpink);
+    color: var(--w-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fix .gnb>ul{
+    width: 80%;
+    height: 80%;
+    flex-direction: column;
+}
+.fix .gnb>ul>li{
+    flex: 1;
+    align-content: center; /* 플랙스가 아니더라도 블록속성일 경우 위아래 정렬 가능한 속성 */
+    transform: translateY(100px);
+    transition: 1s;
+    /* transition-delay: .2s; */
+}
+header.on .fix .gnb>ul>li{
+    transform: translateY(0);
+}
+.fix .gnb>ul>li>a{
+    font-size: 5rem;
+    font-family: var(--Roboto-serif);
+}
+.fix .gnb>ul>li>ul.sub{
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-block-start: 20px;
+}
+.fix .gnb>ul>li>ul.sub li{
+    border-left: 1px solid var(--w-color);
+    padding-inline: 1rem;
+}
+.fix .gnb>ul>li>ul.sub li:first-child{
+    border-left: none;
+    padding-inline-start: 0;
+}
+
+header .inner{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--w-color);
+}
+header h1{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+header.on h1{
+    display: none;
+}
+
+header ul{
+    display: flex;
+}
+
+nav{
+    width: 850px;
+    font-size: 1.2rem;
+}
+header.on nav, header.sc nav{
+    display: none;
+}
+nav ul li{
+    flex: 1;
+    text-align: center;
+}
+
+header.on .lang, header.sc .lang{
+    display: none;
+}
+.lang ul{
+    gap: 10px;
+    font-weight: 200;
+}
+.lang ul li{
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+}
+.lang ul li:last-child{
+    border-right: none;
+}
+
+.ham{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    transition: .6s;
+    cursor: pointer;
+    border-radius: 50%;
+} 
+header.on .ham{
+    border: 1px solid #fff;
+    margin-left: auto;
+}
+
+.ham ul{
+    flex-direction: column;
+    width: 26px;
+    height: 20px;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-39%,-39%);
+} 
+.ham ul li{
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform-origin: left top;
+    transition: .6s;
+}
+header.on .ham ul li{
+    transform: rotate(45deg);
+}
+
+.ham ul li:nth-child(2){
+    width: 70%;
+}
+header.on .ham ul li:nth-child(2){
+    display: none;
+}
+header.on .ham ul li:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+footer{
+    height: 210px;
+    background: #000;
+    color: #999;
+}
+footer .inner{
+    display: flex;
+    height: 80%;
+    align-items: center;
+}
+footer .inner .logo{
+    font-size: 2rem;
+    margin-right: 30px;
+}
+footer .inner ul.list li{
+    float: left;
+    padding: 0 10px;
+    line-height: 1;
+    margin-bottom: 10px;
+    border-right: 1px solid #999;
+}
+footer .inner ul.list li:nth-child(2n+1){
+    clear: both;
+}
+footer .inner ul.list li:nth-child(2n), footer .inner ul.list li:last-child{
+    border-right: none;
+}
+footer .inner ul.sns{
+    display: flex;
+    margin-left: auto;
+    font-size: 1.4rem;
+    gap: 20px;
+}
+footer .bottom{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #999;
+    font-size: 0.8rem;
+}

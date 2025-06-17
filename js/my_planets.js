@@ -211,20 +211,21 @@ $(function () {
 
 
   const orbitCherrisy = gsap.to(".cherrisy", {
-    duration: 30,
+    duration: 20,
     repeat: -1,
     ease: "none",
     motionPath: {
-      path: "#orbitPath3",
-      align: "#orbitPath3",
+      path: "#orbitPath2",
+      align: "#orbitPath2",
       autoRotate: false,
       alignOrigin: [0.5, 0.5],
-      start: 0
+      start: 0.2,
+      end: 1.2
     }
   });
 
   const orbitIrun = gsap.to(".irun", {
-    duration: 20,
+    duration: 26,
     repeat: -1,
     ease: "none",
     motionPath: {
@@ -259,6 +260,18 @@ $(function () {
       end: 1.6
     }
   });
+  const orbitBloop = gsap.to(".bloop", {
+    duration: 30, // 원하는 속도로 조절
+    repeat: -1,
+    ease: "none",
+    motionPath: {
+      path: "#orbitPath3",
+      align: "#orbitPath3",
+      autoRotate: false,
+      alignOrigin: [0.5, 0.5],
+      start: 0
+    }
+  });
 
   $('.projects .planets').hover(
     function () {
@@ -266,14 +279,21 @@ $(function () {
       orbitIrun.pause();
       orbitNivea.pause();
       orbitGoongle.pause();
+      orbitBloop.pause();
     },
     function () {
       orbitCherrisy.resume();
       orbitIrun.resume();
       orbitNivea.resume();
       orbitGoongle.resume();
+      orbitBloop.resume();
     }
   );
+  // BLOOP 행성 클릭 시 alert 띄우기
+  $('.planets.bloop a').click(function (e) {
+    e.preventDefault(); // 링크 이동 막기
+    alert('BLOOP 프로젝트는 준비 중입니다! 06/24(월) 오픈 예정입니다.');
+  });
 
   function toggleMyPlanetsView() {
     const isMobile = window.innerWidth <= 1024;

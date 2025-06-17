@@ -755,7 +755,7 @@ main {
 
     .product .product_list .pd_list {
         gap: 40px 30px;
-        justify-content: left;
+        justify-content: center;
     }
 
     .product_util {

@@ -272,17 +272,21 @@
         gap: 0;
     }
 
+    .section3_m .projects .projects_wrapper article a {
+        gap: 0;
+    }
+
     .section3_m .projects .projects_wrapper article> :first-child,
     .nivea a>img {
         width: 150px;
         height: auto;
     }
 
-    .section3_m .projects .projects_wrapper article.irun a>img {
+    /* .section3_m .projects .projects_wrapper article.irun a>img {
         width: 150px;
-    }
+    } */
 
-    .section3_m .projects .projects_wrapper article.irun>a img {
+    .section3_m .projects .projects_wrapper article.irun>a img,.section3_m .projects .projects_wrapper article.cherie a>img {
         width: 160px;
     }
 

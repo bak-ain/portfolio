@@ -1,4 +1,9 @@
 $(function () {
+
+
+
+
+
     let ITEMS_PER_PAGE = getItemsPerPage();
 
     function getItemsPerPage() {
@@ -13,12 +18,16 @@ $(function () {
         }
     });
 
+
+
+    
+
     const subCategories = {
         "베스트": [],
         "페이스": [], //"크림", "립케어"
         "바디": [], //"바디로션", "데오드란트", "핸드케어"
         "선": [], //"멀티", "페이스", "바디", "키즈"
-        "니베아맨": [] //"쉐이빙", "데오드란트", "클렌징"
+        "니베아맨": [] //"쉐이빙", "데오드란트", "클렌징" 
     };
 
     let currentSortOption = '추천순';
