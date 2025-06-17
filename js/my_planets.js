@@ -211,7 +211,7 @@ $(function () {
 
 
   const orbitCherrisy = gsap.to(".cherrisy", {
-    duration: 20,
+    duration: 15,
     repeat: -1,
     ease: "none",
     motionPath: {
@@ -219,25 +219,26 @@ $(function () {
       align: "#orbitPath2",
       autoRotate: false,
       alignOrigin: [0.5, 0.5],
-      start: 0.2,
-      end: 1.2
+      start: 0
     }
   });
 
   const orbitIrun = gsap.to(".irun", {
-    duration: 26,
+    duration: 15,
     repeat: -1,
     ease: "none",
     motionPath: {
       path: "#orbitPath2",
       align: "#orbitPath2",
       autoRotate: false,
-      alignOrigin: [0.5, 0.5]
+      alignOrigin: [0.5, 0.5],
+      start: 0.4,
+      end: 1.4
     }
   });
 
   const orbitNivea = gsap.to(".nivea", {
-    duration: 10,
+    duration: 9,
     repeat: -1,
     ease: "none",
     motionPath: {
@@ -248,7 +249,7 @@ $(function () {
     }
   });
   const orbitGoongle = gsap.to(".goongle", {
-    duration: 28, // 원하는 속도로 조절
+    duration: 24, // 원하는 속도로 조절
     repeat: -1,
     ease: "none",
     motionPath: {
@@ -256,12 +257,11 @@ $(function () {
       align: "#orbitPath3",
       autoRotate: false,
       alignOrigin: [0.5, 0.5],
-      start: 0.6,
-      end: 1.6
+      start: 0
     }
   });
   const orbitBloop = gsap.to(".bloop", {
-    duration: 30, // 원하는 속도로 조절
+    duration: 24, // 원하는 속도로 조절
     repeat: -1,
     ease: "none",
     motionPath: {
@@ -269,7 +269,8 @@ $(function () {
       align: "#orbitPath3",
       autoRotate: false,
       alignOrigin: [0.5, 0.5],
-      start: 0
+      start: 0.6,
+      end: 1.6
     }
   });
 

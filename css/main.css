@@ -1180,7 +1180,7 @@ section {
 }
 
 .section3 .projects .orbit_wrap article a>img {
-    width: 180px;
+    width: 165px;
     height: auto;
     transition: .3s;
 }
@@ -1190,20 +1190,20 @@ section {
 }
 
 .section3 .projects .orbit_wrap article.irun a>img {
-    width: 190px;
+    width: 200px;
 }
 
-/* .section3 .projects .orbit_wrap article.cherrisy a>img {
-    width: 210px;
-} */
+.section3 .projects .orbit_wrap article.nivea a>img {
+    width: 170px;
+}
 
 .section3 .projects .orbit_wrap article.goongle a>img {
-    width: 185px;
+    width: 200px;
 }
 
-/* .section3 .projects .orbit_wrap article.bloop a>img {
-    width: 205px;
-} */
+.section3 .projects .orbit_wrap article.bloop a>img {
+    width: 175px;
+}
 
 /* .section3 .projects .orbit_wrap article.goongle a>img {
     width: 210px;
