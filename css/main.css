@@ -1026,13 +1026,23 @@ section {
     gap: 120px;
 }
 
-#my_planets_wrap .typing_text {
+/* #my_planets_wrap .typing_text {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 #my_planets_wrap .typing_text.visible {
+    visibility: visible;
+    opacity: 1;
+} */
+.typing_wrapper .typing_text1 {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.typing_wrapper .typing_text1.visible {
     visibility: visible;
     opacity: 1;
 }
@@ -1202,7 +1212,7 @@ section {
 }
 
 .section3 .projects .orbit_wrap article.bloop a>img {
-    width: 175px;
+    width: 180px;
 }
 
 /* .section3 .projects .orbit_wrap article.goongle a>img {
@@ -1412,7 +1422,7 @@ section {
     gap: 12vw;
 }
 
-.section3_m .intro .typing_wrapper .typing_text {
+/* .section3_m .intro .typing_wrapper .typing_text {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1421,7 +1431,7 @@ section {
 .section3_m .intro .typing_wrapper .typing_text.visible {
     visibility: visible;
     opacity: 1;
-}
+} */
 
 .section3_m .intro .typing_wrapper .typing_text1 {
     color: #7DEAFF;
@@ -1499,6 +1509,36 @@ section {
     justify-content: center;
     gap: 2vw;
     flex-direction: column;
+}
+
+.section3_m .projects .projects_wrapper article a[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(5, 163, 207);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-family: Galmuri11;
+    white-space: nowrap;
+    border-radius: 8px;
+    /* opacity: 0; */
+    pointer-events: none;
+    /* transition: opacity 0.3s ease; */
+    z-index: 1000;
+}
+
+.section3_m .projects .projects_wrapper article a[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    top: 104%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color:  rgb(5, 163, 207);
+    /* transition: opacity 0.3s ease; */
 }
 
 /* .section3_m .projects .projects_wrapper article:nth-child(1) {
