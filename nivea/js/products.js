@@ -20,7 +20,7 @@ $(function () {
 
 
 
-    
+
 
     const subCategories = {
         "베스트": [],
@@ -468,6 +468,87 @@ $(function () {
             ],
             "id": 19
         },
+        {
+            "image": "img/nivea_men1.png",
+            "title": "니베아맨 센서티브 쉐이빙 폼",
+            "volume": "200ml x 2개",
+            "discount": "29%",
+            "original": "23,700원",
+            "price": "11,900원",
+            "rating": "4.9(14)",
+            "skinType": ["민감성 피부"],
+            "productType": ["쉐이빙", "폼"],
+            "target": ["남성"],
+            "priceRange": "1만원 이하",
+            "isBestSeller": true,
+            "category": ["베스트", "니베아맨"],
+            "id": 20
+        },
+        {
+            "image": "img/nivea_men2.png",
+            "title": "니베아맨 딥 클랜징 폼",
+            "volume": "200ml x 2개",
+            "discount": "27%",
+            "original": "13,800원",
+            "price": "9,990원",
+            "rating": "4.8(12)",
+            "skinType": ["지성 피부"],
+            "productType": ["쉐이빙", "폼"],
+            "target": ["남성"],
+            "priceRange": "1만원 이하",
+            "isBestSeller": true,
+            "category": ["베스트", "니베아맨"],
+            "id": 21
+        },
+        {
+            "image": "img/nivea_men3.png",
+            "title": "니베아맨 쿨킥 데오드란트 롤온",
+            "volume": "50ml",
+            "discount": "",
+            "original": "",
+            "price": "9,400원",
+            "rating": "4.7(22)",
+            "skinType": ["모든 피부"],
+            "productType": ["데오드란트", "롤온"],
+            "target": ["남성"],
+            "priceRange": "1만원 대",
+            "isBestSeller": false,
+            "category": ["니베아맨", "바디"],
+            "id": 22
+        },
+        {
+            "image": "img/니베아맨데오.png",
+            "title": "니베아맨 프레시 액션 데오드란트 스프레이",
+            "volume": "150ml x 2개",
+            "discount": "31%",
+            "original": "14,400원",
+            "price": "9,900원",
+            "rating": "4.6(31)",
+            "skinType": ["모든 피부"],
+            "productType": ["데오드란트", "스프레이"],
+            "target": ["남성"],
+            "priceRange": "1만원 이하",
+            "isBestSeller": false,
+            "category": ["니베아맨", "바디"],
+            "id": 23
+        },
+        {
+            "image": "img/nivea_men5.png",
+            "title": "니베아 립케어 맨 액티브 케어",
+            "volume": "4.8g X 4개",
+            "discount": "21%",
+            "original": "19,600원",
+            "price": "15,400원",
+            "rating": "4.9(10)",
+            "skinType": ["모든 피부"],
+            "productType": ["립케어"],
+            "target": ["남성"],
+            "priceRange": "1만원 대",
+            "isBestSeller": false,
+            "category": ["니베아맨", "페이스"],
+            "id": 24
+        }
+
     ];
     function getQueryParam(key) {
         const urlParams = new URLSearchParams(window.location.search);

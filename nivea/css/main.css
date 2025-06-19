@@ -794,43 +794,92 @@ main section h3 {
 /* sub_banner */
 .sub_banner {
     width: 100%;
-    background: linear-gradient(87deg, #FF9B1B 0.45%, #FFC652 44.44%, #FFF8A7 98.21%);
+    /* background: linear-gradient(87deg, #FF9B1B 0.45%, #FFC652 44.44%, #FFF8A7 98.21%); */
+    background-image: url(../img/subBanner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: left center; */
 }
 
 .sub_banner .inner {
     align-items: center;
-    justify-content: space-between;
-    padding: 60px 85px 50px;
-    gap: 150px;
+    justify-content: flex-start;
+    padding: 125px 0 125px 40px;
+    /* gap: 150px; */
 }
 
 .sub_banner .sb_left {}
 
 .sub_banner .sb_left .txt {
     color: #FFF;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 30px;
     /* animation: bsAni infinite linear 1.5s; */
 }
 
+/* chevron-right2 */
 .sub_banner .sb_left .txt h3 {
-    color: #FFF;
-    font-family: 'NanumSquareRound';
-    font-size: 70px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.sub_banner .sb_left .txt p {
-    font-family: 'NanumSquareRound';
-    font-size: 32px;
+    color: #141678;
+    font-family: 'JalnanGothic';
+    font-size: 48px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 6px;
+    position: relative;
 }
 
-.sub_banner .sb_left .emj_all {
+.sub_banner .sb_left .txt h3::after {
+    content: '';
+    display: block;
+    width: 57%;
+    height: 21%;
+    background-color: #AF91FD;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    z-index: -1;
+}
+
+.sub_banner .sb_left .txt p {
+    font-family: 'NanumSquare';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+
+.sb_btn {
+    font-family: 'NanumSquareRoundBold';
+    font-size: 20px;
+    /* font-weight: 500; */
+    color: #FFF;
+    border-radius: 10px;
+    background-color: #1AB4C0;
+    box-shadow: 2px 4px 4px -2px rgba(142, 164, 201, 0.50);
+    /* background-image: url(../img/chevron-right2.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 20px; */
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+}
+
+.sb_btn span {
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+.sb_btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+/* .sub_banner .sb_left .emj_all {
     margin-top: 60px;
     padding-left: 6px;
 }
@@ -843,16 +892,9 @@ main section h3 {
 
 .sub_banner .sb_right {
     position: relative;
-}
-
-/* @keyframes emjAni {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    50% { transform: rotate(10deg); }
-    75% { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
 } */
 
+/* 
 .sub_banner .sb_right span {
     color: var(--font-og-d);
     text-align: center;
@@ -870,23 +912,7 @@ main section h3 {
     object-fit: cover;
     width: 710px;
     height: 485px;
-}
-
-/* .sub_banner .sb_right img.emj {
-    width: 380px;
-    height: 380px;
-}
-
-.sub_banner .sb_right img.message {
-    width: 420px;
-    height: 200px;
-}
-
-.sub_banner .sb_right img.mirror {
-    width: 238px;
-    height: 309px;
 } */
-
 
 /* best_review */
 .best_review {
