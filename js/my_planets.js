@@ -143,6 +143,7 @@ $(function () {
         animatePlanets();
       },
       onEnterBack: () => {
+        animateOrbitPaths();
         resetPlanets();
         animatePlanets();
       },
