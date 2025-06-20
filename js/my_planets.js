@@ -300,12 +300,22 @@ $(function () {
     alert('BLOOP 프로젝트는 준비 중입니다! 06/24(월) 오픈 예정입니다.');
   });
 
+
+  function killOrbits() {
+    orbitCherrisy && orbitCherrisy.kill();
+    orbitIrun && orbitIrun.kill();
+    orbitNivea && orbitNivea.kill();
+    orbitGoongle && orbitGoongle.kill();
+    orbitBloop && orbitBloop.kill();
+  }
+
   function toggleMyPlanetsView() {
     const isMobile = window.innerWidth <= 1024;
 
     if (isMobile) {
       $('.section3').hide();
       $('.section3_m').show();
+      killOrbits();
       if (introTrigger) introTrigger.kill();
       if (projectTrigger) projectTrigger.kill();
       introTrigger = projectTrigger = null;

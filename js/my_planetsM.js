@@ -8,11 +8,11 @@ $(function () {
     const $hint = $('.section3_m .intro .scroll_hint');
     const $ship = $('.section3_m .intro .spaceship');
 
-    const $typingEm = $('.section3_m .em_typing em');
-    const $restText = $('.section3_m .rest_text');
+    // const $typingEm = $('.section3_m .em_typing em');
+    // const $restText = $('.section3_m .rest_text');
 
     const text1 = "MY PLANETS";
-    const emText = "AIN UNIVERSE";
+    // const emText = "AIN UNIVERSE";
 
     // 루프 타이핑
     function typeLoop($el, text, speed) {
@@ -55,8 +55,8 @@ $(function () {
         isTyping = true;
 
         $text1.html('').css({ visibility: 'hidden', opacity: 0 });
-        $typingEm.text('');
-        $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
+        // $typingEm.text('');
+        // $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
         $hint.hide();
 
         clearInterval(typingInterval1);
@@ -67,22 +67,22 @@ $(function () {
         $ship.addClass('on');
 
         typingInterval1 = typeElement($text1, text1, 100, () => {
-            typeLoop($typingEm, emText, 80);
+            // typeLoop($typingEm, emText, 80);
 
-            gsap.fromTo($restText,
-                { opacity: 0, x: -30 },
-                {
-                    opacity: 1,
-                    x: 0,
-                    duration: 1.2,
-                    ease: 'power2.out',
-                    delay: 1,
-                    onComplete: () => {
-                        isTyping = false;
-                        typingDone = true;
-                        // $hint.fadeIn();
-                    }
-                });
+            // gsap.fromTo($restText,
+            //     { opacity: 0, x: -30 },
+            //     {
+            //         opacity: 1,
+            //         x: 0,
+            //         duration: 1.2,
+            //         ease: 'power2.out',
+            //         delay: 1,
+            //         onComplete: () => {
+            //             isTyping = false;
+            //             typingDone = true;
+            //             // $hint.fadeIn();
+            //         }
+            //     });
         });
     }
 
