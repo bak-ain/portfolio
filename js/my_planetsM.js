@@ -1,9 +1,10 @@
 $(function () {
+    $('.typing_text1').css({ visibility: 'hidden', opacity: 0 }).html('');
     let isTyping = false;
     let typingInterval1 = null;
     let typingIntervalLoop = null;
 
-    const $text1 = $('.typing_text1');
+    const $text1 = $('.section3_m .typing_text1');
     const $hint = $('.section3_m .intro .scroll_hint');
     const $ship = $('.section3_m .intro .spaceship');
 
@@ -33,7 +34,7 @@ $(function () {
     // 기본 타이핑
     function typeElement($el, fullText, speed, callback) {
         $el.html('');
-        $el.addClass('visible');
+        $el.css({ visibility: 'visible', opacity: 1 });
         let i = 0;
         const interval = setInterval(() => {
             $el.html(fullText.slice(0, i + 1));
@@ -53,7 +54,7 @@ $(function () {
 
         isTyping = true;
 
-        $text1.html('').removeClass('visible');
+        $text1.html('').css({ visibility: 'hidden', opacity: 0 });
         $typingEm.text('');
         $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
         $hint.hide();
@@ -108,7 +109,7 @@ $(function () {
     });
 
     // 👉 최초 진입 시 자동 실행
-    startTypingAndFly();
+    // startTypingAndFly();
 
 
     let projectsSlide;

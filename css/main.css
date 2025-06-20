@@ -1036,7 +1036,7 @@ section {
     visibility: visible;
     opacity: 1;
 } */
-.typing_wrapper .typing_text1 {
+/* .typing_wrapper .typing_text1 {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1045,7 +1045,7 @@ section {
 .typing_wrapper .typing_text1.visible {
     visibility: visible;
     opacity: 1;
-}
+} */
 
 #my_planets_wrap .intro .typing_text1 {
     color: #7DEAFF;

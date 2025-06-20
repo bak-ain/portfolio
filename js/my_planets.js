@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 $(function () {
+  $('.typing_text1').css({ visibility: 'hidden', opacity: 0 }).html('');
+
   $(window).on('resize', () => {
     toggleMyPlanetsView();
   });
@@ -42,7 +44,7 @@ $(function () {
 
   function typeElement($el, fullText, speed, callback) {
     $el.html('');
-    $el.addClass('visible');
+    $el.css({ visibility: 'visible', opacity: 1 }); // 타이핑 시작할 때 직접 보이게
     let i = 0;
     const interval = setInterval(() => {
       $el.html(fullText.slice(0, i + 1));
@@ -61,7 +63,7 @@ $(function () {
     isTyping = true;
     isIntroPlayed = true;
 
-    $text1.html('').removeClass('visible');
+    $text1.html('').css({ visibility: 'hidden', opacity: 0 });
     $typingEm.text('');
     $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
     $hint.fadeOut();
@@ -104,12 +106,13 @@ $(function () {
     startTypingAndFly();
     $('body').addClass('scroll-lock');
   }
+
   function resetIntro() {
     clearInterval(typingInterval1);
     clearInterval(typingIntervalLoop);
     $('body').removeClass('scroll-lock');
 
-    $text1.html('').removeClass('visible');
+    $text1.html('').css({ visibility: 'hidden', opacity: 0 }); // 직접 숨김
     $typingEm.text('');
     $restText.css({ opacity: 0, transform: 'translateX(-30px)' });
     $hint.hide();

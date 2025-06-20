@@ -207,7 +207,10 @@ $(function () {
         const st = ScrollTrigger.getById('horizontalScroll');
         if (st) window.scrollTo({ top: st.start, behavior: 'auto' });
       }
-      if (con === '#hidden_portals') $body.addClass('scroll-lock');
+      // ✅ 모바일이 아닐 때만 scroll-lock 적용
+      if (con === '#hidden_portals' && window.innerWidth > 1024) {
+        $body.addClass('scroll-lock');
+      }
 
       setTimeout(() => isNavigatingFromGNB = false, 500);
     });
