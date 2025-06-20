@@ -26,6 +26,7 @@
     font-feature-settings: 'liga' off, 'clig' off;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    cursor: none;
 }
 
 .scroll-lock {
@@ -34,7 +35,6 @@
     touch-action: none;
     overscroll-behavior: none;
 }
-
 /* cursor */
 .custom_cursor {
     position: fixed;
@@ -47,6 +47,7 @@
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.15s ease-out;
+    
 }
 
 .custom_cursor.planets {
