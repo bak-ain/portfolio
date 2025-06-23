@@ -295,10 +295,10 @@ $(function () {
     }
   );
   // BLOOP 행성 클릭 시 alert 띄우기
-  $('.planets.bloop a').click(function (e) {
-    e.preventDefault(); // 링크 이동 막기
-    alert('BLOOP 프로젝트는 준비 중입니다! 06/24(월) 오픈 예정입니다.');
-  });
+  // $('.planets.bloop a').click(function (e) {
+  //   e.preventDefault(); // 링크 이동 막기
+  //   alert('BLOOP 프로젝트는 준비 중입니다! 06/24(월) 오픈 예정입니다.');
+  // });
 
 
   function killOrbits() {
