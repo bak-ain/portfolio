@@ -642,8 +642,10 @@
         <h2 class="portal_title  glitch is-glitching" data-text="HIDDEN PORTALS" tabindex="-1">HIDDEN PORTALS</h2>
         <div class="portal_circle" id="portal">
           <figure>
-            <video class="portal_video" src="video/potal_bg_vid.mp4" autoplay muted loop playsinline
-              poster="img/portals_bg.png"></video>
+            <video id="portal-video" class="portal_video" playsinline webkit-playsinline autoplay muted loop preload="metadata" poster="img/portals_bg.png">
+              <source src="video/potal_bg_vid.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </figure>
           <img class="circle" src="img/circle.svg" alt="">
           <div class="portal_cards">
@@ -727,51 +729,6 @@
       </div><!-- //.contacts -->
     </section><!-- //.section5 -->
   </div><!-- //.wrap -->
-  
-  <script>
-    // iOS Safari에서 비디오 자동 재생 강제 시도
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('bg-video');
-      
-      if (video) {
-        // 비디오 로드 시도
-        video.load();
-        
-        // 자동 재생 시도
-        const playPromise = video.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            // 자동 재생 성공
-            console.log('Video autoplay started');
-          }).catch((error) => {
-            // 자동 재생 실패 시 사용자 인터랙션 후 재생
-            console.log('Autoplay prevented, waiting for user interaction');
-            
-            // 첫 번째 사용자 터치/클릭 시 재생
-            const playOnInteraction = () => {
-              video.play();
-              document.removeEventListener('touchstart', playOnInteraction);
-              document.removeEventListener('click', playOnInteraction);
-            };
-            
-            document.addEventListener('touchstart', playOnInteraction);
-            document.addEventListener('click', playOnInteraction);
-          });
-        }
-      }
-    });
-    
-    // 페이지 가시성 변경 시 재생 재시도 (앱 전환 후 돌아올 때)
-    document.addEventListener('visibilitychange', function() {
-      if (!document.hidden) {
-        const video = document.getElementById('bg-video');
-        if (video && video.paused) {
-          video.play().catch(e => console.log('Resume play failed:', e));
-        }
-      }
-    });
-  </script>
 </body>
 
 </html>
