@@ -14,23 +14,6 @@ $(function () {
     const text1 = "MY PLANETS";
     // const emText = "AIN UNIVERSE";
 
-    // 루프 타이핑
-    function typeLoop($el, text, speed) {
-        if (typingIntervalLoop) clearInterval(typingIntervalLoop);
-        let i = 0;
-        function loopTyping() {
-            i = 0;
-            $el.text('');
-            typingIntervalLoop = setInterval(() => {
-                $el.text(text.slice(0, ++i));
-                if (i >= text.length) {
-                    clearInterval(typingIntervalLoop);
-                    setTimeout(loopTyping, 1000);
-                }
-            }, speed);
-        }
-        loopTyping();
-    }
     // 기본 타이핑
     function typeElement($el, fullText, speed, callback) {
         $el.html('');
@@ -67,22 +50,6 @@ $(function () {
         $ship.addClass('on');
 
         typingInterval1 = typeElement($text1, text1, 100, () => {
-            // typeLoop($typingEm, emText, 80);
-
-            // gsap.fromTo($restText,
-            //     { opacity: 0, x: -30 },
-            //     {
-            //         opacity: 1,
-            //         x: 0,
-            //         duration: 1.2,
-            //         ease: 'power2.out',
-            //         delay: 1,
-            //         onComplete: () => {
-            //             isTyping = false;
-            //             typingDone = true;
-            //             // $hint.fadeIn();
-            //         }
-            //     });
         });
     }
 
