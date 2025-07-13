@@ -264,9 +264,6 @@ $(function () {
     setupFloatingContacts();
   });
 
-  // iOS Safari에서 비디오 자동 재생 처리
-  initVideoAutoplay();
-
   // iOS Safari에서 비디오 자동 재생 강제 시도
   function initVideoAutoplay() {
     // 배경 비디오 처리
@@ -274,9 +271,14 @@ $(function () {
     // 포털 비디오 처리
     const portalVideo = document.getElementById('portal-video');
     
+    // 사용자 인터랙션 핸들러 (한 번만 실행되도록)
+    let interactionHandlerAdded = false;
+    
     // 비디오 재생 함수
     function playVideo(video, videoName) {
-      if (video) {
+      if (!video) return;
+      
+      try {
         // 비디오 로드 시도
         video.load();
         
@@ -291,39 +293,48 @@ $(function () {
             // 자동 재생 실패 시 사용자 인터랙션 후 재생
             console.log(`${videoName} autoplay prevented, waiting for user interaction`);
             
-            // 첫 번째 사용자 터치/클릭 시 재생
-            const playOnInteraction = () => {
-              video.play();
-              document.removeEventListener('touchstart', playOnInteraction);
-              document.removeEventListener('click', playOnInteraction);
-            };
-            
-            document.addEventListener('touchstart', playOnInteraction);
-            document.addEventListener('click', playOnInteraction);
+            // 인터랙션 핸들러가 이미 추가되지 않았다면 추가
+            if (!interactionHandlerAdded) {
+              const playOnInteraction = () => {
+                // 모든 비디오 재생 시도
+                if (bgVideo) bgVideo.play().catch(e => console.log('BG video play failed:', e));
+                if (portalVideo) portalVideo.play().catch(e => console.log('Portal video play failed:', e));
+                
+                // 이벤트 리스너 제거
+                document.removeEventListener('touchstart', playOnInteraction);
+                document.removeEventListener('click', playOnInteraction);
+              };
+              
+              document.addEventListener('touchstart', playOnInteraction, { once: true });
+              document.addEventListener('click', playOnInteraction, { once: true });
+              interactionHandlerAdded = true;
+            }
           });
         }
+      } catch (error) {
+        console.error(`${videoName} load failed:`, error);
       }
     }
     
     // 각 비디오 재생 시도
     playVideo(bgVideo, 'Background video');
     playVideo(portalVideo, 'Portal video');
+    
+    // 페이지 가시성 변경 시 재생 재시도 (앱 전환 후 돌아올 때)
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        if (bgVideo && bgVideo.paused) {
+          bgVideo.play().catch(e => console.log('Background video resume play failed:', e));
+        }
+        
+        if (portalVideo && portalVideo.paused) {
+          portalVideo.play().catch(e => console.log('Portal video resume play failed:', e));
+        }
+      }
+    });
   }
 
-  // 페이지 가시성 변경 시 재생 재시도 (앱 전환 후 돌아올 때)
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-      const bgVideo = document.getElementById('bg-video');
-      const portalVideo = document.getElementById('portal-video');
-      
-      if (bgVideo && bgVideo.paused) {
-        bgVideo.play().catch(e => console.log('Background video resume play failed:', e));
-      }
-      
-      if (portalVideo && portalVideo.paused) {
-        portalVideo.play().catch(e => console.log('Portal video resume play failed:', e));
-      }
-    }
-  });
+  // iOS Safari에서 비디오 자동 재생 처리
+  initVideoAutoplay();
  
 }); //ready end
